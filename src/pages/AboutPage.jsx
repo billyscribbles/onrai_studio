@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import About from '../components/About'
@@ -13,7 +14,16 @@ const milestones = [
 
 export default function AboutPage() {
   return (
-    <main className="about-page">
+    <>
+      <Helmet>
+        <title>About Onrai Studio — Melbourne Web Design & Development Agency</title>
+        <meta name="description" content="Onrai Studio is a Melbourne-based web design and development studio helping local and small businesses grow online with fast, modern websites, SEO, and AI tools." />
+        <link rel="canonical" href="https://mystudio.com.au/about" />
+        <meta property="og:url" content="https://mystudio.com.au/about" />
+        <meta property="og:title" content="About Onrai Studio — Melbourne Web Design Agency" />
+        <meta property="og:description" content="We're a lean, Melbourne-based studio that builds websites for local businesses. Senior-level work, clear pricing, no lock-in contracts." />
+      </Helmet>
+      <main className="about-page">
       {/* Page hero */}
       <section className="about-page__hero">
         <div className="about-page__hero-inner">
@@ -68,5 +78,6 @@ export default function AboutPage() {
       {/* CTA into contact */}
       <Contact />
     </main>
+    </>
   )
 }
