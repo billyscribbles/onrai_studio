@@ -1,0 +1,123 @@
+.about-page__hero {
+  background: var(--color-bg-alt);
+  padding: 5rem 1.5rem 4rem;
+  border-bottom: 1px solid #e8e4df;
+}
+
+.about-page__hero-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.about-page__back {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--accent, #0d9488);
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  transition: opacity 0.15s;
+}
+
+.about-page__back:hover {
+  opacity: 0.7;
+}
+
+.about-page__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-weight: 600;
+  color: #1a1a1a;
+  font-optical-sizing: auto;
+  line-height: 1.1;
+  margin: 0 0 1.25rem;
+}
+
+.about-page__lead {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #555;
+  max-width: 620px;
+  margin: 0;
+}
+
+/* Timeline */
+.about-page__timeline {
+  padding: 5rem 1.5rem;
+  background: var(--color-bg-alt);
+  border-top: 1px solid #e8e4df;
+}
+
+.about-page__timeline-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.about-page__timeline-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 600;
+  color: #1a1a1a;
+  font-optical-sizing: auto;
+  margin: 0 0 2.5rem;
+}
+
+.about-page__milestones {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: 2px solid #e2ddd8;
+  padding-left: 2rem;
+}
+
+.about-page__milestone {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.about-page__milestone:last-child {
+  padding-bottom: 0;
+}
+
+.about-page__milestone::before {
+  content: '';
+  position: absolute;
+  left: -2.45rem;
+  top: 0.35rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent, #0d9488);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px var(--accent, #0d9488);
+}
+
+.about-page__milestone-year {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent, #0d9488);
+  margin-bottom: 0.35rem;
+}
+
+.about-page__milestone-text {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #444;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .about-page__hero {
+    padding: 3.5rem 1rem 3rem;
+  }
+
+  .about-page__timeline {
+    padding: 3.5rem 1rem;
+  }
+}
