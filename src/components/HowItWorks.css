@@ -278,5 +278,6 @@
 
   .how__step-number {
     font-size: 80px;
+    font-optical-sizing: auto;
   }
 }

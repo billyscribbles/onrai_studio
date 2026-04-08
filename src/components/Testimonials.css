@@ -52,6 +52,7 @@
 .testimonial-card__text {
   font-family: var(--font-display);
   font-size: 16px;
+  font-style: italic;
   line-height: 1.75;
   color: var(--color-text-soft);
   margin-bottom: 28px;
@@ -101,6 +102,7 @@
   font-size: 11px;
   color: var(--color-accent);
   font-weight: 600;
+  font-optical-sizing: auto;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   margin-top: 3px;

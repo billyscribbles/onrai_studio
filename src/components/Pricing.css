@@ -158,6 +158,7 @@
   text-align: center;
   font-family: var(--font-body);
   font-size: 15px;
+  font-optical-sizing: auto;
   color: var(--color-muted);
 }
 

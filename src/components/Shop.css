@@ -196,6 +196,7 @@
 .shop__footnote a {
   color: var(--color-accent);
   font-weight: 500;
+  font-optical-sizing: auto;
   text-decoration: underline;
   text-underline-offset: 3px;
 }

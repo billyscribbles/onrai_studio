@@ -203,5 +203,6 @@
 
   .contact__header .section-label {
     font-size: 36px;
+    font-optical-sizing: auto;
   }
 }

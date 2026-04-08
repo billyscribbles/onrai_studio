@@ -152,6 +152,7 @@
   font-family: var(--font-body);
   font-size: 15px;
   font-weight: 600;
+  font-optical-sizing: auto;
   padding: 12px 24px;
   border-radius: var(--radius-full);
   border: none;

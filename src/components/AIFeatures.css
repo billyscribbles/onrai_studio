@@ -144,5 +144,6 @@
 
   .ai-features__title {
     font-size: 36px;
+    font-optical-sizing: auto;
   }
 }

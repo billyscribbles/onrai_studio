@@ -89,5 +89,6 @@
 
   .faq__question {
     font-size: 16px;
+    font-optical-sizing: auto;
   }
 }
