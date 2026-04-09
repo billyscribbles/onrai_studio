@@ -3,7 +3,8 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import {
   Monitor, Palette, PenTool, Layers, TrendingUp, Mail,
-  Search, Share2, FileText, Megaphone, ArrowRight, Check
+  Search, Share2, FileText, Megaphone, ArrowRight, Check,
+  Server, LayoutDashboard
 } from 'lucide-react'
 import Contact from '../components/Contact'
 import './ServicesPage.css'
@@ -73,6 +74,38 @@ const categories = [
       { name: 'Analytics & Reporting', desc: 'Monthly reporting so you know exactly what\'s working and what\'s not.' },
     ],
   },
+  {
+    id: 'hosting',
+    eyebrow: 'Domain, Hosting & Maintenance',
+    heading: 'We keep your site online and up to date.',
+    desc: "Launching a site is just the beginning. We handle everything that keeps it fast, secure, and running smoothly — so you never have to think about it.",
+    icon: Server,
+    color: '#059669',
+    services: [
+      { name: 'Domain Registration', desc: 'We register and manage your domain so it\'s always pointing where it should.' },
+      { name: 'Hosting Setup & Management', desc: 'Fast, reliable hosting configured and monitored by us — no cPanel headaches.' },
+      { name: 'SSL Certificates', desc: 'Your site stays secure with HTTPS, auto-renewing certificates handled for you.' },
+      { name: 'Website Backups', desc: 'Automatic daily backups so your site can be restored quickly if anything goes wrong.' },
+      { name: 'Security Monitoring', desc: 'Malware scanning, firewall setup, and alerts so threats are caught before they cause damage.' },
+      { name: 'Ongoing Maintenance', desc: 'Plugin updates, CMS upgrades, and performance checks on a regular schedule.' },
+    ],
+  },
+  {
+    id: 'dashboard',
+    eyebrow: 'Admin Dashboards & Content Control',
+    heading: 'Full control over your own website.',
+    desc: 'We build custom admin dashboards and integrate content management tools so you can update your site, manage stock, swap images, and monitor performance — without touching code.',
+    icon: LayoutDashboard,
+    color: '#d97706',
+    services: [
+      { name: 'Custom Admin Dashboards', desc: 'A clean, purpose-built interface to manage exactly what your business needs.' },
+      { name: 'Image & Media Management', desc: 'Easily swap banners, product photos, gallery images, and more — no developer needed.' },
+      { name: 'Shopify Stock & Product Control', desc: 'Update inventory, pricing, variants, and product listings directly from your dashboard.' },
+      { name: 'WooCommerce Stock Management', desc: 'Manage orders, stock levels, and product data for your WooCommerce store.' },
+      { name: 'Content & Copy Editing', desc: 'Edit page text, hero copy, team bios, and service descriptions on the fly.' },
+      { name: 'Analytics & Traffic Monitoring', desc: 'See visits, top pages, and conversion events in a simple dashboard built for you.' },
+    ],
+  },
 ]
 
 const whyUs = [
@@ -88,7 +121,7 @@ export default function ServicesPage() {
     <>
       <Helmet>
         <title>Services — Web Design, Branding & Digital Marketing | Onrai Studio</title>
-        <meta name="description" content="Onrai Studio offers web design, logo design, brand identity, graphic design, and digital marketing for local and small businesses across Australia." />
+        <meta name="description" content="Onrai Studio offers web design, branding, graphic design, digital marketing, hosting, maintenance, and custom admin dashboards for local and small businesses across Australia." />
         <link rel="canonical" href="https://onraistudio.com/services" />
         <meta property="og:url" content="https://onraistudio.com/services" />
         <meta property="og:title" content="Services — Web Design, Branding & Digital Marketing | Onrai Studio" />
@@ -115,7 +148,7 @@ export default function ServicesPage() {
                 all built around your business goals.
               </p>
               <div className="sp__hero-pills">
-                {['Web Design', 'Logo Design', 'Brand Identity', 'Graphic Design', 'SEO', 'Google Ads', 'Social Media'].map(p => (
+                {['Web Design', 'Logo Design', 'Brand Identity', 'Graphic Design', 'SEO', 'Google Ads', 'Hosting & Maintenance', 'Admin Dashboards'].map(p => (
                   <span key={p} className="sp__hero-pill">{p}</span>
                 ))}
               </div>
