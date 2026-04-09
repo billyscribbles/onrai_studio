@@ -1,6 +1,5 @@
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
 import About from '../components/About'
 import Contact from '../components/Contact'
 import './AboutPage.css'
@@ -33,7 +32,6 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <Link to="/" className="about-page__back">← Back to home</Link>
             <div className="about-page__location">
               <span className="about-page__location-dot" />
               Melbourne, Australia

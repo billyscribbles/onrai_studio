@@ -105,7 +105,6 @@ export default function ServicesPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
-              <Link to="/" className="sp__back">← Back to home</Link>
               <div className="sp__hero-eyebrow">
                 <span className="sp__hero-dot" />
                 Full-service studio
