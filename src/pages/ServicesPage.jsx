@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import {
   Monitor, Palette, PenTool, Layers, TrendingUp, Mail,
   Search, Share2, FileText, Megaphone, ArrowRight, Check,
-  Server, LayoutDashboard
+  Server, LayoutDashboard, Sparkles
 } from 'lucide-react'
 import Contact from '../components/Contact'
 import './ServicesPage.css'
@@ -91,6 +91,22 @@ const categories = [
     ],
   },
   {
+    id: 'ai-search',
+    eyebrow: 'AI-Powered Search',
+    heading: 'Search that actually finds what customers want.',
+    desc: "Most site search is frustratingly dumb. We deploy intelligent search engines — powered by Meilisearch — that index your products, content, and catalogue, then return fast, relevant results even when customers type it wrong.",
+    icon: Sparkles,
+    color: '#4f46e5',
+    services: [
+      { name: 'Product Catalogue Indexing', desc: 'Every product, variant, and attribute indexed for instant, accurate retrieval.' },
+      { name: 'Typo-Tolerant Search', desc: "Finds what customers meant, not just what they typed — handles misspellings automatically." },
+      { name: 'AI & Semantic Search', desc: 'Understands intent behind queries, not just keywords — surfaces results that actually match.' },
+      { name: 'Faceted Filtering', desc: 'Filter by price, category, brand, or any custom attribute — all in real time.' },
+      { name: 'Search Analytics', desc: 'See what customers search for, what returns no results, and where to fill the gaps.' },
+      { name: 'Managed Search Hosting', desc: 'We run and maintain the search server — zero configuration, zero downtime headaches for you.' },
+    ],
+  },
+  {
     id: 'dashboard',
     eyebrow: 'Admin Dashboards & Content Control',
     heading: 'Full control over your own website.',
@@ -121,7 +137,7 @@ export default function ServicesPage() {
     <>
       <Helmet>
         <title>Services — Web Design, Branding & Digital Marketing | Onrai Studio</title>
-        <meta name="description" content="Onrai Studio offers web design, branding, graphic design, digital marketing, hosting, maintenance, and custom admin dashboards for local and small businesses across Australia." />
+        <meta name="description" content="Onrai Studio offers web design, branding, graphic design, digital marketing, AI-powered search, hosting, maintenance, and custom admin dashboards for local and small businesses across Australia." />
         <link rel="canonical" href="https://onraistudio.com/services" />
         <meta property="og:url" content="https://onraistudio.com/services" />
         <meta property="og:title" content="Services — Web Design, Branding & Digital Marketing | Onrai Studio" />
@@ -148,7 +164,7 @@ export default function ServicesPage() {
                 all built around your business goals.
               </p>
               <div className="sp__hero-pills">
-                {['Web Design', 'Logo Design', 'Brand Identity', 'Graphic Design', 'SEO', 'Google Ads', 'Hosting & Maintenance', 'Admin Dashboards'].map(p => (
+                {['Web Design', 'Logo Design', 'Brand Identity', 'Graphic Design', 'SEO', 'Google Ads', 'AI-Powered Search', 'Hosting & Maintenance', 'Admin Dashboards'].map(p => (
                   <span key={p} className="sp__hero-pill">{p}</span>
                 ))}
               </div>
