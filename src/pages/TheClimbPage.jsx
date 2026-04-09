@@ -45,22 +45,24 @@ export default function TheClimbPage() {
                 found everywhere — page one on Google, cited by ChatGPT and Perplexity. Each
                 step is bite-sized and written in plain English. No jargon, no fluff.
               </p>
-              <div className="climb-page__stats">
-                <div className="climb-page__stat">
-                  <div className="climb-page__stat-value">{entries.length}</div>
-                  <div className="climb-page__stat-label">
-                    {entries.length === 1 ? 'step live' : 'steps live'}
-                  </div>
-                </div>
-                <div className="climb-page__stat">
-                  <div className="climb-page__stat-value">{populatedChapters.length}</div>
-                  <div className="climb-page__stat-label">
-                    {populatedChapters.length === 1 ? 'chapter' : 'chapters'}
-                  </div>
-                </div>
-                <div className="climb-page__stat">
-                  <div className="climb-page__stat-value">∞</div>
-                  <div className="climb-page__stat-label">more to come</div>
+              <div className="climb-page__hero-cta">
+                {entries[0] && (
+                  <Link
+                    to={`/the-climb/${entries[0].slug}`}
+                    className="climb-page__cta"
+                  >
+                    Start the climb
+                    <span aria-hidden="true"> →</span>
+                  </Link>
+                )}
+                <div className="climb-page__reassurance">
+                  <span>Plain English</span>
+                  <span className="climb-page__reassurance-dot" aria-hidden="true">•</span>
+                  <span>Bite-sized steps</span>
+                  <span className="climb-page__reassurance-dot" aria-hidden="true">•</span>
+                  <span>No jargon</span>
+                  <span className="climb-page__reassurance-dot" aria-hidden="true">•</span>
+                  <span>Free</span>
                 </div>
               </div>
             </motion.div>

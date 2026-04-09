@@ -73,29 +73,59 @@
   letter-spacing: 0.02em;
 }
 
-/* ── Hero stats ────────────────────────────────────────────────────────── */
+/* ── Hero CTA + reassurance row ────────────────────────────────────────── */
 
-.climb-page__stats {
+.climb-page__hero-cta {
   display: flex;
-  gap: 2.5rem;
-  margin-top: 0.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-top: 0.25rem;
 }
 
-.climb-page__stat-value {
-  font-family: var(--font-display);
-  font-size: clamp(1.9rem, 3.2vw, 2.5rem);
-  font-weight: 700;
-  color: #fff;
-  line-height: 1;
-  margin-bottom: 0.35rem;
-}
-
-.climb-page__stat-label {
+.climb-page__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--color-accent);
+  padding: 0.9rem 1.65rem;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  box-shadow: 0 10px 30px var(--color-accent-glow);
+  transition:
+    background var(--transition-base),
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.climb-page__cta:hover {
+  background: var(--color-accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px var(--color-accent-glow);
+}
+
+.climb-page__cta:active {
+  transform: translateY(0);
+}
+
+.climb-page__reassurance {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.55rem 0.7rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.55);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.01em;
+}
+
+.climb-page__reassurance-dot {
+  color: rgba(255, 255, 255, 0.25);
+  user-select: none;
 }
 
 /* ── Trail map (overview) ──────────────────────────────────────────────── */
