@@ -36,10 +36,17 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
+      "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
+      "@id": "https://onraistudio.com/#organization",
       "name": "Onrai Studio",
-      "description": "Web design and development studio helping local and small businesses get found on Google and grow online.",
       "url": "https://onraistudio.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://onraistudio.com/og-image.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "description": "Web design and development studio helping local and small businesses get found on Google and grow online.",
       "email": "hello@onraistudio.com",
       "address": {
         "@type": "PostalAddress",
@@ -48,11 +55,24 @@
         "addressCountry": "AU"
       },
       "areaServed": [
+        { "@type": "City", "name": "Melbourne" },
+        { "@type": "AdministrativeArea", "name": "Victoria" },
         { "@type": "Country", "name": "Australia" }
       ],
       "serviceType": ["Web Design", "Web Development", "SEO", "eCommerce", "AI Chatbot Integration"],
       "priceRange": "$$",
       "openingHours": "Mo-Fr 09:00-18:00",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "hello@onraistudio.com",
+        "areaServed": "AU",
+        "availableLanguage": "English"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Billy Huynh"
+      },
       "sameAs": []
     }
     </script>

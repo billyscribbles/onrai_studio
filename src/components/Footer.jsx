@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 // Replace with your Calendly link when ready: https://calendly.com/your-name
 const CALENDLY_URL = 'https://calendly.com/billyhuynh01/30min';
@@ -80,6 +81,15 @@ export default function Footer() {
                 </a>
               </li>
             ))}
+          </ul>
+        </div>
+
+        <div>
+          <div className="footer__col-title">The Climb</div>
+          <ul className="footer__links">
+            <li>
+              <Link to="/the-climb" className="footer__link">The Climb</Link>
+            </li>
           </ul>
         </div>
 

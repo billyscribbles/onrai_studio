@@ -29,6 +29,7 @@ export default function Navbar() {
           <Link to="/portfolio" className="navbar__link">Portfolio</Link>
           <Link to="/ai" className="navbar__link">AI</Link>
           <Link to="/about" className="navbar__link">About</Link>
+          <Link to="/the-climb" className="navbar__link">The Climb</Link>
           <Link to="/contact">
             <button className="navbar__cta">Get a Quote</button>
           </Link>
@@ -61,6 +62,9 @@ export default function Navbar() {
         </Link>
         <Link to="/about" className="navbar__mobile-link" onClick={() => setMenuOpen(false)}>
           About
+        </Link>
+        <Link to="/the-climb" className="navbar__mobile-link" onClick={() => setMenuOpen(false)}>
+          The Climb
         </Link>
         <Link to="/contact" onClick={() => setMenuOpen(false)}>
           <button className="navbar__mobile-cta">Get a Quote</button>

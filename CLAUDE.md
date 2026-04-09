@@ -125,3 +125,64 @@ Formspree endpoint uses `VITE_FORMSPREE_ID` env variable. The `<Contact />` comp
 
 - **Always let the user verify changes before committing or pushing.** After making code changes, stop and wait for approval unless explicitly told to push.
 - Never run `git commit` or `git push` unless the user says "push", "commit", or explicitly approves.
+
+---
+
+## The Climb — Blog Style Guide
+
+The Climb (`/the-climb`) is the public log of Onrai Studio's journey from invisible to found everywhere. Each entry is a **step on a climb**, not a dated blog post. The audience is everyday small-business owners with zero tech background. Every entry must follow these rules.
+
+### Voice & language
+
+- Plain English. No jargon. If a technical term is unavoidable, explain it in one sentence in parentheses.
+- Short sentences. Concrete nouns. Active voice.
+- Talk **to** the reader ("you"), not about "the user".
+- Lead with the outcome, then the how.
+
+### Structure of every entry
+
+Each entry is a numbered step in the climb and must contain:
+
+1. **Step number + title** — e.g. `Step 01 — Getting Google to Recognise Your Brand`. No publish date.
+2. **Summary** (1–2 sentences) — the problem in plain English and what changes after this step.
+3. **Why this matters** — a short paragraph explaining the stakes for a small-business owner.
+4. **The steps you take** — an ordered list of 3–6 concrete actions. Each action has:
+   - A short action title (e.g. "Claim your business name everywhere")
+   - A 1–2 sentence plain-English description
+   - A **difficulty pill**: Easy / Medium / Hard
+   - Optional: a time estimate ("~10 min")
+5. **What changes after** — 1 short paragraph or a before/after visual showing the result.
+6. **Next on the climb** — a tease of what step comes next.
+
+### Difficulty gauge
+
+Three levels, shown as coloured pills next to each step:
+
+- **Easy** (green) — anyone can do it in one sitting, no tech skills.
+- **Medium** (amber) — requires following instructions carefully or using a tool you haven't used before.
+- **Hard** (red) — technical work; most readers will want help.
+
+### Visuals — required
+
+Every entry must have at least **one visual** to illustrate the message. Pick whichever fits best:
+
+- **Screenshots** — stored in `public/images/`, referenced with a `<figcaption>`.
+- **CSS illustrations** — for abstract concepts (e.g. a diagram of how Google sees a brand), built with divs and the design tokens in `src/index.css`. Reuse patterns from `ServicesPage`/`AIPage` hero mockups.
+- **Icons** — small inline SVGs or emoji for step markers.
+- **Tables** — for before/after comparisons. Keep to 2–3 columns max on desktop; stack on mobile.
+
+Visuals must use the project's design tokens (`--color-accent`, `--radius-md`, etc.) and work at mobile (375–600px) and desktop (1280px+).
+
+### No publish dates
+
+The Climb is a journey, not a news feed. Do not display `entry.date` in the UI. Entries are ordered by step number. If you need an internal timestamp for records, keep it off-screen.
+
+### Tone examples
+
+> ❌ "The existing JSON-LD schema in index.html used only the ProfessionalService type with minimal fields."
+>
+> ✅ "Google had no idea who we were. When someone searched 'Onrai Studio', Google thought it was a typo for 'Sonrai Studio'. Here's how we fixed it."
+
+### Page location
+
+All entries live in the `entries` array in `src/pages/TheClimbPage.jsx`. New section types (beyond `text`, `steps`, `baseline`, `next`) should be added to the render switch in that same file and styled in `src/pages/TheClimbPage.css` using BEM `.climb-entry__*` classes.
