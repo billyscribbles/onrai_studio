@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import './Portfolio.css'
 
 const projects = [
@@ -45,7 +46,7 @@ export default function Portfolio() {
         </div>
 
         <div className="portfolio__cta-wrap">
-          <a href="#contact" className="portfolio__cta">View All Work →</a>
+          <Link to="/portfolio" className="portfolio__cta">View All Work →</Link>
         </div>
       </div>
     </section>

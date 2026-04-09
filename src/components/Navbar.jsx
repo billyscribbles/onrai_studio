@@ -2,18 +2,10 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
-const hashLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Work", href: "#portfolio" },
-  { label: "Packages", href: "#packages" },
-  { label: "FAQ", href: "#faq" },
-];
-
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { pathname } = useLocation();
-  const isHome = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -33,22 +25,12 @@ export default function Navbar() {
         </Link>
 
         <nav className="navbar__links" aria-label="Main navigation">
-          {isHome && hashLinks.map((l) => (
-            <a key={l.label} href={l.href} className="navbar__link">
-              {l.label}
-            </a>
-          ))}
           <Link to="/services" className="navbar__link">Services</Link>
+          <Link to="/portfolio" className="navbar__link">Portfolio</Link>
           <Link to="/about" className="navbar__link">About</Link>
-          {isHome ? (
-            <a href="#contact">
-              <button className="navbar__cta">Get a Quote</button>
-            </a>
-          ) : (
-            <Link to="/#contact">
-              <button className="navbar__cta">Get a Quote</button>
-            </Link>
-          )}
+          <Link to="/contact">
+            <button className="navbar__cta">Get a Quote</button>
+          </Link>
         </nav>
 
         <button
@@ -67,31 +49,18 @@ export default function Navbar() {
         className={`navbar__mobile${menuOpen ? " open" : ""}`}
         aria-label="Mobile navigation"
       >
-        {isHome && hashLinks.map((l) => (
-          <a
-            key={l.label}
-            href={l.href}
-            className="navbar__mobile-link"
-            onClick={() => setMenuOpen(false)}
-          >
-            {l.label}
-          </a>
-        ))}
         <Link to="/services" className="navbar__mobile-link" onClick={() => setMenuOpen(false)}>
           Services
+        </Link>
+        <Link to="/portfolio" className="navbar__mobile-link" onClick={() => setMenuOpen(false)}>
+          Portfolio
         </Link>
         <Link to="/about" className="navbar__mobile-link" onClick={() => setMenuOpen(false)}>
           About
         </Link>
-        {isHome ? (
-          <a href="#contact" onClick={() => setMenuOpen(false)}>
-            <button className="navbar__mobile-cta">Get a Quote</button>
-          </a>
-        ) : (
-          <Link to="/#contact" onClick={() => setMenuOpen(false)}>
-            <button className="navbar__mobile-cta">Get a Quote</button>
-          </Link>
-        )}
+        <Link to="/contact" onClick={() => setMenuOpen(false)}>
+          <button className="navbar__mobile-cta">Get a Quote</button>
+        </Link>
       </nav>
     </header>
   );
