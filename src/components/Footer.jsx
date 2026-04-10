@@ -112,7 +112,7 @@ export default function Footer() {
                 <Linkedin size={18} strokeWidth={1.8} />
               </a>
               <a
-                href="https://www.instagram.com/onraistudio"
+                href="https://www.instagram.com/onraistudio/"
                 className="footer__social"
                 target="_blank"
                 rel="noopener noreferrer"
