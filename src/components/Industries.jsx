@@ -28,6 +28,31 @@ const industries = [
   { emoji: '🏊', name: 'Pool & Spa Services' },
 ]
 
+const rowSize = Math.ceil(industries.length / 3)
+const rows = [
+  industries.slice(0, rowSize),
+  industries.slice(rowSize, rowSize * 2),
+  industries.slice(rowSize * 2),
+]
+
+function ChipRow({ items, direction }) {
+  const doubled = [...items, ...items]
+  return (
+    <div className="industries__runway-wrap">
+      <div
+        className={`industries__runway ${direction === 'right' ? 'industries__runway--reverse' : ''}`}
+      >
+        {doubled.map((industry, i) => (
+          <div key={`${industry.name}-${i}`} className="industry-chip">
+            <span className="industry-chip__emoji">{industry.emoji}</span>
+            <span className="industry-chip__name">{industry.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 export default function Industries() {
   return (
     <section className="industries" id="industries">
@@ -47,21 +72,17 @@ export default function Industries() {
           </p>
         </motion.div>
 
-        <div className="industries__grid">
-          {industries.map((industry, i) => (
-            <motion.div
-              key={industry.name}
-              className="industry-chip"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: i * 0.03, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <span className="industry-chip__emoji">{industry.emoji}</span>
-              <span className="industry-chip__name">{industry.name}</span>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div
+          className="industries__rows"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <ChipRow items={rows[0]} direction="left" />
+          <ChipRow items={rows[1]} direction="right" />
+          <ChipRow items={rows[2]} direction="left" />
+        </motion.div>
 
         <motion.div
           className="industries__cta"
