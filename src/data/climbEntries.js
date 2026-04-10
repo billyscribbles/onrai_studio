@@ -31,6 +31,12 @@ export const chapters = [
     subtitle:
       `Google and real customers both look for the same thing: proof you're a real business. This chapter is about making the truth visible — no puffery, no tricks.`,
   },
+  {
+    id: 'performance',
+    title: 'Performance',
+    subtitle:
+      'Google found you, trusts your name, and knows what you do. Now we make the plumbing fast, clean, and mistake-free.',
+  },
 ]
 
 export const entries = [
@@ -595,7 +601,233 @@ export const entries = [
         items: [
           `Search your business name from an incognito window in two weeks. The knowledge panel should be populating. If it isn't, check your verification status first — that's almost always the cause.`,
           `Set a monthly reminder to add one new photo and respond to any new reviews. Active profiles outrank dormant ones.`,
-          `The next chapter moves from "being found" to "being chosen" — what actually makes a visitor pick you over a competitor on the same results page.`,
+          `Next up: the technical plumbing check. We look under the hood at sitemaps, page speed, and the invisible settings that quietly decide whether Google crawls you properly.`,
+        ],
+      },
+    ],
+  },
+  {
+    id: 7,
+    step: 7,
+    slug: '07-technical-seo-basics',
+    chapter: 'performance',
+    title: 'Get Your Technical SEO Basics Perfect',
+    summary:
+      'Google already knows you exist. Now we make sure nothing on your site is quietly blocking it — broken sitemaps, missing HTTPS, slow pages. This is the plumbing check every site needs and almost no one does.',
+    sections: [
+      {
+        type: 'text',
+        heading: 'Why this matters',
+        body: `Everything we've done so far — the schema, the local keywords, the trust signals — is content work. It's the paint job. This step is the engine check underneath. If your site loads slowly, blocks Google's crawler, or accidentally tells it "don't look at this page," all that content work goes to waste. The good news: most of these fixes take five minutes each, and you only do them once.`,
+      },
+      {
+        type: 'diagram',
+        heading: 'What a sitemap actually is',
+        body: `A sitemap is a simple file that lists every page on your site. You hand it to Google so it doesn't have to wander around guessing what exists. Think of it like a table of contents for your website — except it's written for Google's crawler, not for humans. The file lives at yoursite.com/sitemap.xml, and it's just a list of URLs with a few extra details like when each page was last updated.`,
+        component: 'SitemapDiagram',
+        caption: 'Your sitemap tells Google exactly which pages to visit — no guessing, no missed pages.',
+      },
+      {
+        type: 'list',
+        heading: 'The technical checklist',
+        intro: `Here's every technical thing Google looks at under the hood. You don't need to know how each one works yet — just tick off the ones you've already got, and we'll fix the gaps below.`,
+        items: [
+          'Your site uses one version of the URL (www or non-www, not both)',
+          'Your site loads over HTTPS (the padlock icon in the browser bar)',
+          'You have a sitemap.xml file that lists every real page',
+          'You have a robots.txt file that isn\'t accidentally blocking Google',
+          'None of your pages have a hidden "noindex" tag keeping them out of search',
+          'Your site loads fast on a phone (under 3 seconds)',
+          'Your Core Web Vitals pass — three speed scores Google publishes for every site',
+          'Every page has a unique, descriptive title in the browser tab',
+          'Every page has a meta description that reads like a one-line pitch',
+          'Pages link to each other where it makes sense (internal links)',
+          'Every image has alt text describing what it shows',
+          'Your homepage has structured data — the hidden business card from Step 02',
+          'You don\'t have duplicate pages showing the same content at different URLs',
+        ],
+        outro: `If you can tick off ten or more, you're ahead of most small businesses. If you're missing a few, the steps below tell you exactly how to fix each one.`,
+      },
+      {
+        type: 'steps',
+        heading: 'Fixing the gaps',
+        items: [
+          {
+            title: 'Force HTTPS and pick one domain version',
+            description:
+              'Log into your hosting dashboard (Cloudflare, Netlify, or whoever hosts your site) and look for "Always use HTTPS" or "Force SSL." Turn it on. Then decide: www.yoursite.com or just yoursite.com? Pick one and set up a redirect so the other version points to it. Having both live confuses Google into thinking you have two separate sites.',
+            difficulty: 'medium',
+            time: '~15 min',
+          },
+          {
+            title: 'Generate and submit your sitemap',
+            description:
+              'If you use WordPress, install a plugin like Yoast or Rank Math — they create the sitemap automatically. If you built your site with a framework like React or Next.js, you may need to create the file manually (it\'s just a list of URLs in XML format). Once the file exists at yoursite.com/sitemap.xml, paste that URL into Google Search Console under "Sitemaps" in the left menu.',
+            difficulty: 'medium',
+            time: '~20 min',
+          },
+          {
+            title: 'Check your robots.txt',
+            description:
+              'Type yoursite.com/robots.txt into your browser. If the file says "Disallow: /" — that means you\'re blocking Google from your entire site. Remove that line. If the file is empty, missing, or just says "Allow: /" with a link to your sitemap, you\'re fine.',
+            difficulty: 'easy',
+            time: '~5 min',
+          },
+          {
+            title: 'Hunt for accidental noindex tags',
+            description:
+              'Open each page of your site in a browser, right-click, and choose "View Page Source." Press Ctrl+F (or Cmd+F on Mac) and search for "noindex." If you find it, that page is invisible to Google on purpose — or by accident. If it\'s accidental, remove the tag and re-publish.',
+            difficulty: 'medium',
+            time: '~10 min',
+          },
+          {
+            title: 'Test your mobile speed',
+            description:
+              'Go to Google\'s PageSpeed Insights tool and paste your homepage URL. It gives you a score out of 100 and flags what\'s slow. Green (90+) is great, orange (50–89) is okay, red (under 50) needs work. It also shows your Core Web Vitals — three scores called LCP (how fast the main content appears), CLS (how much the page jumps around while loading), and INP (how fast buttons respond when tapped).',
+            difficulty: 'easy',
+            time: '~5 min',
+          },
+          {
+            title: 'Write proper title tags and meta descriptions',
+            description:
+              'Open each page and check the text that shows in the browser tab — that\'s the title tag. It should describe the page in under 60 characters and include your city if you\'re a local business. Then check the meta description (you set these in Step 03). Each one should be a unique, one-line pitch under 155 characters. No two pages should share the same title or description.',
+            difficulty: 'easy',
+            time: '~20 min',
+          },
+          {
+            title: 'Add internal links between your pages',
+            description:
+              'Read through each page and look for places where you mention a topic that\'s covered on another page. Link those words to the other page. For example, if your About page mentions your services, link the word "services" to your Services page. This helps Google understand how your pages relate to each other and makes it easier for visitors to find what they need.',
+            difficulty: 'easy',
+            time: '~15 min',
+          },
+          {
+            title: 'Add alt text to every image',
+            description:
+              'Find every image on your site and make sure it has alt text — a short description of what the image shows. This helps Google understand your images, and it\'s also what screen readers use for visitors who can\'t see them. Keep it simple and descriptive.',
+            difficulty: 'easy',
+            time: '~15 min',
+            example: {
+              before: '<img src="team-photo.jpg">',
+              after: '<img src="team-photo.jpg" alt="The team working at a Melbourne cafe">',
+            },
+          },
+        ],
+      },
+      {
+        type: 'resource',
+        heading: 'Check your speed score',
+        label: 'Free tool',
+        title: 'Google PageSpeed Insights',
+        body: 'Paste any URL to see your speed score, Core Web Vitals, and specific recommendations for what to fix.',
+        href: 'https://pagespeed.web.dev/',
+      },
+      {
+        type: 'text',
+        heading: 'What changes after this',
+        body: `Once the plumbing is clean, everything you've done in the previous steps compounds faster. Pages get indexed within hours instead of weeks. Your speed scores improve, which directly affects where Google ranks you on mobile. None of this is glamorous work, but it's the difference between a site that quietly stalls and one that keeps climbing.`,
+      },
+      {
+        type: 'next',
+        heading: 'Next on the climb',
+        items: [
+          `Run PageSpeed Insights on your homepage and your busiest service page. Screenshot your scores — you'll want to compare them in two weeks after making fixes.`,
+          `Next up: we open Google Search Console and learn how to use it — submit your sitemap, check which pages are indexed, see what people are actually searching to find you, and request re-indexing after changes.`,
+        ],
+      },
+    ],
+  },
+  {
+    id: 8,
+    step: 8,
+    slug: '08-search-console',
+    chapter: 'performance',
+    title: 'Learn to Use Google Search Console',
+    summary:
+      'Search Console is the free dashboard Google gives you to see exactly how your site appears in search. Most small businesses never open it. Here\'s how to use the five features that actually matter.',
+    sections: [
+      {
+        type: 'text',
+        heading: 'Why this matters',
+        body: `Every fix you've made so far — the schema, the title tags, the sitemap — is invisible until you can confirm Google actually picked it up. Search Console is the only place that tells you directly. It shows which pages Google has indexed, which ones it's ignoring, what people search before they click your site, and whether anything is broken. Think of it as the dashboard for everything we've been building.`,
+      },
+      {
+        type: 'text',
+        heading: 'Getting in',
+        body: `If you set up Search Console back in Step 01, you're already in — just go to search.google.com/search-console and sign in with the same Google account. If you skipped that step, go back and do it now. Everything below assumes your site is verified and connected.`,
+      },
+      {
+        type: 'steps',
+        heading: 'The five things to check',
+        items: [
+          {
+            title: 'Inspect any URL',
+            description:
+              'The inspection bar sits at the top of every Search Console page. Paste any URL from your site and hit Enter. Google tells you three things: whether the page is in Google\'s index, whether there are any errors stopping it, and when Google last looked at it. If a page isn\'t indexed and you think it should be, this is where you start.',
+            difficulty: 'easy',
+            time: '~2 min',
+          },
+          {
+            title: 'Submit your sitemap',
+            description:
+              'Click "Sitemaps" in the left menu. Type your sitemap URL — usually yoursite.com/sitemap.xml — and click Submit. This hands Google your table of contents so it doesn\'t have to guess which pages exist. You only need to do this once. After that, Google re-reads it automatically whenever you add new pages.',
+            difficulty: 'easy',
+            time: '~3 min',
+          },
+          {
+            title: 'Check which pages are indexed',
+            description:
+              'Click "Pages" under the Indexing section. You\'ll see two numbers: how many pages Google has indexed, and how many it excluded. Click the excluded list to see why — common reasons are accidental "noindex" tags, redirect chains, or duplicate content. If an important page is excluded, fix the cause and then use the URL inspection tool to request re-indexing.',
+            difficulty: 'easy',
+            time: '~5 min',
+          },
+          {
+            title: 'See what people are searching to find you',
+            description:
+              'Click "Performance" in the left menu, then "Search Results." The Queries tab shows the exact words people typed into Google before your site appeared in their results. This is gold — it tells you what your audience actually looks for, in their own words. You can use those phrases in your page titles, headings, and content to match what real people are searching for.',
+            difficulty: 'easy',
+            time: '~5 min',
+          },
+          {
+            title: 'Request re-indexing after a change',
+            description:
+              'Whenever you make a meaningful change to a page — update the title tag, add alt text to images, rewrite a section — paste that page\'s URL into the inspection bar and click "Request Indexing." Google re-crawls it within hours instead of waiting days or weeks for the next scheduled visit. This is how you make your fixes show up fast.',
+            difficulty: 'easy',
+            time: '~2 min',
+          },
+        ],
+      },
+      {
+        type: 'list',
+        heading: 'Your weekly routine',
+        intro: 'Once everything is set up, Search Console takes about five minutes a week. Here\'s what to check each time you log in:',
+        items: [
+          'Glance at the Performance report — are impressions and clicks trending up, down, or flat?',
+          'Check the Pages report under Indexing — any new pages excluded that shouldn\'t be?',
+          'Look at the Queries tab — any new search terms appearing that you could write content about?',
+          'If you made changes to your site that week, inspect the updated URLs to confirm Google has picked them up.',
+        ],
+      },
+      {
+        type: 'resource',
+        heading: 'Open Search Console',
+        label: 'Google tool',
+        title: 'Google Search Console',
+        body: 'Sign in with the Google account you used to verify your site. If you haven\'t set it up yet, go back to Step 01.',
+        href: 'https://search.google.com/search-console',
+      },
+      {
+        type: 'text',
+        heading: 'What changes after this',
+        body: `Search Console turns all the invisible work from the previous steps into something you can see. You'll know which pages Google has found, which ones it's ignoring, and what real people are typing to find businesses like yours. Instead of guessing whether your SEO changes are working, you check a dashboard once a week and make decisions based on real data. That's the shift — from hoping to knowing.`,
+      },
+      {
+        type: 'next',
+        heading: 'Next on the climb',
+        items: [
+          `Log into Search Console and submit your sitemap if you haven't already. Then inspect your homepage — confirm it's indexed with no errors.`,
+          `Set a weekly calendar reminder to check the Performance and Pages reports. Five minutes, same day each week.`,
+          `The next step moves from infrastructure to content strategy — what to actually write about so that Google sends you the right visitors, not just any visitors.`,
         ],
       },
     ],

@@ -3,6 +3,7 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import Contact from '../components/Contact'
 import IndexCheckWidget from '../components/IndexCheckWidget'
+import SitemapDiagram from '../components/SitemapDiagram'
 import {
   chapters,
   getEntryBySlug,
@@ -128,6 +129,22 @@ export default function TheClimbStepPage() {
                         <figcaption className="climb-entry__baseline-caption">
                           {section.caption}
                         </figcaption>
+                      </figure>
+                    </>
+                  )}
+
+                  {section.type === 'diagram' && (
+                    <>
+                      {section.body && (
+                        <p className="climb-entry__section-body">{section.body}</p>
+                      )}
+                      <figure className="climb-entry__diagram">
+                        {section.component === 'SitemapDiagram' && <SitemapDiagram />}
+                        {section.caption && (
+                          <figcaption className="climb-entry__diagram-caption">
+                            {section.caption}
+                          </figcaption>
+                        )}
                       </figure>
                     </>
                   )}

@@ -1057,6 +1057,20 @@
   border-top: 1px solid var(--color-border);
 }
 
+/* ── Diagram sections ─────────────────────────────────────────────────── */
+
+.climb-entry__diagram {
+  margin: 1.25rem 0 0;
+}
+
+.climb-entry__diagram-caption {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  text-align: center;
+  margin-top: 1rem;
+}
+
 /* ── Climb steps ───────────────────────────────────────────────────────── */
 
 .climb-entry__steps {
