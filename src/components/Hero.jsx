@@ -1,51 +1,39 @@
-import { motion } from 'framer-motion'
 import './Hero.css'
-
-const fadeUp = (delay = 0, duration = 0.55) => ({
-  initial: { opacity: 0, y: 24 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration, ease: [0.22, 1, 0.36, 1], delay },
-})
 
 export default function Hero() {
   return (
     <section className="hero" id="hero">
       <div className="hero__inner">
         <div className="hero__content">
-          <motion.span className="hero__eyebrow" {...fadeUp(0)}>
+          <span className="hero__eyebrow hero__fade-up" style={{ animationDelay: '0s' }}>
             AI-Powered Web Studio · Melbourne · Australia
-          </motion.span>
+          </span>
 
-          <motion.h1 className="hero__headline" {...fadeUp(0, 0.35)}>
+          <h1 className="hero__headline hero__fade-up" style={{ animationDelay: '0s' }}>
             Your Business,<br />
             <span className="hero__headline-accent">Found Online.</span>
-          </motion.h1>
+          </h1>
 
-          <motion.p className="hero__subheadline" {...fadeUp(0.1)}>
+          <p className="hero__subheadline hero__fade-up" style={{ animationDelay: '0.1s' }}>
             We build fast, AI-powered websites for Melbourne small businesses — so your customers find you on Google, not your competitors.
-          </motion.p>
+          </p>
 
-          <motion.div className="hero__ctas" {...fadeUp(0.2)}>
+          <div className="hero__ctas hero__fade-up" style={{ animationDelay: '0.2s' }}>
             <a href="#contact" className="hero__cta-primary">
               Get a Free Quote →
             </a>
             <a href="#packages" className="hero__cta-secondary">
               See Packages
             </a>
-          </motion.div>
+          </div>
 
-          <motion.div className="hero__trust-row" {...fadeUp(0.4)}>
+          <div className="hero__trust-row hero__fade-up" style={{ animationDelay: '0.4s' }}>
             <span className="hero__trust-item">✓ Live in 2 weeks</span>
             <span className="hero__trust-item">✓ Melbourne based</span>
-          </motion.div>
+          </div>
         </div>
 
-        <motion.div
-          className="hero__visual"
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-        >
+        <div className="hero__visual hero__slide-in">
           <div className="hero__composition">
             {/* Google search result mockup */}
             <div className="hero__search-card">
@@ -94,7 +82,7 @@ export default function Hero() {
               <div className="hero__float-stat-label">More website visitors</div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

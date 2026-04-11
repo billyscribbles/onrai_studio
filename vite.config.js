@@ -10,10 +10,11 @@ export default defineConfig({
   },
   build: {
     sourcemap: false,
+    cssCodeSplit: true,
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom'],
+          vendor: ['react', 'react-dom', 'react-router-dom'],
           motion: ['framer-motion'],
         },
       },

@@ -1,16 +1,18 @@
 import { Helmet } from 'react-helmet-async'
+import { lazy, Suspense } from 'react'
 import Hero from '../components/Hero'
-import Stats from '../components/Stats'
-import Services from '../components/Services'
-import Industries from '../components/Industries'
-import AIFeatures from '../components/AIFeatures'
-import HowItWorks from '../components/HowItWorks'
-import Shop from '../components/Shop'
-import Portfolio from '../components/Portfolio'
-import TechStack from '../components/TechStack'
-import Testimonials from '../components/Testimonials'
-import FAQ from '../components/FAQ'
-import Contact from '../components/Contact'
+
+const Stats = lazy(() => import('../components/Stats'))
+const Services = lazy(() => import('../components/Services'))
+const Industries = lazy(() => import('../components/Industries'))
+const AIFeatures = lazy(() => import('../components/AIFeatures'))
+const HowItWorks = lazy(() => import('../components/HowItWorks'))
+const Shop = lazy(() => import('../components/Shop'))
+const Portfolio = lazy(() => import('../components/Portfolio'))
+const TechStack = lazy(() => import('../components/TechStack'))
+const Testimonials = lazy(() => import('../components/Testimonials'))
+const FAQ = lazy(() => import('../components/FAQ'))
+const Contact = lazy(() => import('../components/Contact'))
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -41,17 +43,19 @@ export default function Home() {
       </Helmet>
       <main>
       <Hero />
-      <Stats />
-      <Services />
-      <Industries />
-      <AIFeatures />
-      <HowItWorks />
-      <Shop />
-      <Portfolio />
-      <TechStack />
-      <Testimonials />
-      <FAQ />
-      <Contact />
+      <Suspense fallback={null}>
+        <Stats />
+        <Services />
+        <Industries />
+        <AIFeatures />
+        <HowItWorks />
+        <Shop />
+        <Portfolio />
+        <TechStack />
+        <Testimonials />
+        <FAQ />
+        <Contact />
+      </Suspense>
     </main>
     </>
   )

@@ -323,9 +323,30 @@
   }
 }
 
+/* CSS animations — replaces Framer Motion for zero-JS LCP */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroSlideIn {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.hero__fade-up {
+  opacity: 0;
+  animation: heroFadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero__slide-in {
+  opacity: 0;
+  animation: heroSlideIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+}
+
 @media (max-width: 768px) {
   .hero {
     padding: 64px 20px 80px;
+    background-image: none;
   }
 
   .hero__inner {
