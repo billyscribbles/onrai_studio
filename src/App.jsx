@@ -3,6 +3,7 @@ import { useEffect, useLayoutEffect, lazy, Suspense } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
+import LegalPage from './pages/LegalPage'
 
 // Retry a lazy import once, then force a full reload if the chunk is gone.
 // Prevents white-page on stale tabs after a redeploy (ChunkLoadError).
@@ -36,19 +37,28 @@ const AIPage = lazyWithRetry(() => import('./pages/AIPage'))
 const PackagesPage = lazyWithRetry(() => import('./pages/PackagesPage'))
 const TheClimbPage = lazyWithRetry(() => import('./pages/TheClimbPage'))
 const TheClimbStepPage = lazyWithRetry(() => import('./pages/TheClimbStepPage'))
-const LegalPage = lazyWithRetry(() => import('./pages/LegalPage'))
 const NotFoundPage = lazyWithRetry(() => import('./pages/NotFoundPage'))
 
 function ScrollToTop() {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual'
     }
   }, [])
   useLayoutEffect(() => {
-    window.scrollTo(0, 0)
-  }, [pathname])
+    if (hash) return
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+    // Keep forcing scroll to top while the page height changes — covers
+    // lazy-loaded route chunks that mount after the initial scroll.
+    const observer = new ResizeObserver(() => window.scrollTo({ top: 0, left: 0, behavior: 'instant' }))
+    observer.observe(document.documentElement)
+    const stop = setTimeout(() => observer.disconnect(), 1000)
+    return () => {
+      observer.disconnect()
+      clearTimeout(stop)
+    }
+  }, [pathname, hash])
   return null
 }
 
