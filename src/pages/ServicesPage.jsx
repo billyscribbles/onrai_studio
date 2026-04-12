@@ -2,8 +2,8 @@ import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import {
-  Monitor, Palette, PenTool, Layers, TrendingUp, Mail,
-  Search, Share2, FileText, Megaphone, ArrowRight, Check,
+  Monitor, Palette, TrendingUp,
+  FileText, ArrowRight, Check,
   Server, LayoutDashboard, Sparkles
 } from 'lucide-react'
 import Contact from '../components/Contact'
@@ -28,34 +28,34 @@ const categories = [
   },
   {
     id: 'brand',
-    eyebrow: 'Brand & Identity Design',
-    heading: 'A brand that people remember.',
-    desc: "Your brand is the first impression you make — and the last thing customers forget. We build cohesive identities from the ground up, or refresh what you already have.",
-    icon: Layers,
+    eyebrow: 'Brand Consistency & Theming',
+    heading: 'A brand that stays consistent across every pixel.',
+    desc: "We don't design logos or print assets — but once you have them, we make sure your brand lives consistently across your website, emails, dashboards, and every code-generated document. Consistent colours, fonts, spacing, and tone, baked into the code.",
+    icon: Palette,
     color: '#7c3aed',
     services: [
-      { name: 'Logo Design', desc: 'Professional logos designed for every format — print, web, signage, and more.' },
-      { name: 'Brand Identity Systems', desc: 'Colours, typography, spacing, and visual language — all working together.' },
-      { name: 'Brand Guidelines', desc: 'A style guide so your brand stays consistent across every touchpoint.' },
-      { name: 'Brand Refresh', desc: "Modernise an outdated identity while keeping what makes you recognisable." },
-      { name: 'Business Card & Stationery', desc: 'Print-ready designs for cards, letterheads, and branded materials.' },
-      { name: 'Favicon & App Icons', desc: 'Small details that make your brand look polished and professional.' },
+      { name: 'Website Theming & Design Tokens', desc: 'Your brand colours, fonts, and spacing turned into a reusable design system baked into the code.' },
+      { name: 'Brand Colour Implementation', desc: 'We apply your palette across the site, UI states, buttons, and backgrounds — with proper contrast and accessibility.' },
+      { name: 'Typography Systems', desc: 'Font pairing, hierarchy, and responsive sizing implemented so headings and body copy always feel intentional.' },
+      { name: 'Logo & Branding Advisory', desc: "We don't design logos, but we advise on what works for web — formats, sizing, colour variants, and where to get them made." },
+      { name: 'Favicon & App Icons', desc: 'We generate favicons, PWA icons, and social share images from your existing logo files.' },
+      { name: 'Cross-Channel Consistency', desc: 'The same brand tokens drive your website, emails, PDFs, and dashboards — one source of truth in code.' },
     ],
   },
   {
-    id: 'graphic',
-    eyebrow: 'Graphic Design',
-    heading: 'Design that sells.',
-    desc: 'Great graphic design makes your business look credible, professional, and worth paying for. We create marketing materials that get noticed — online and in the real world.',
-    icon: PenTool,
-    color: '#ea580c',
+    id: 'automation',
+    eyebrow: 'Generated Docs, Emails & Reports',
+    heading: 'Let your website do the paperwork.',
+    desc: 'Anything your site already knows — orders, customers, bookings, form submissions — can be turned into a polished document or message, generated on demand by code. No copy-paste, no manual templates.',
+    icon: FileText,
+    color: '#db2777',
     services: [
-      { name: 'Social Media Graphics', desc: 'On-brand posts, stories, and banners for Instagram, Facebook, and LinkedIn.' },
-      { name: 'Flyer & Poster Design', desc: 'Print-ready marketing collateral that grabs attention.' },
-      { name: 'Email Newsletter Design', desc: 'Branded email templates that look great in every inbox.' },
-      { name: 'Presentation Design', desc: 'Pitch decks and slide decks that make you look the part.' },
-      { name: 'Menu & Price List Design', desc: 'Beautiful, print-ready menus for cafés, restaurants, and service businesses.' },
-      { name: 'Signage & Banners', desc: 'Pull-up banners, shop signage, and display graphics.' },
+      { name: 'Transactional Emails', desc: 'Order confirmations, booking receipts, password resets, welcome emails — branded, responsive, and triggered automatically from your site.' },
+      { name: 'Bulk & Campaign Emails', desc: 'Branded HTML email templates ready to drop into Mailchimp, Klaviyo, or Resend — so every blast looks like it came from you.' },
+      { name: 'PDF Invoice & Receipt Generation', desc: 'Generate branded invoices, receipts, and quotes on demand from your order or customer data.' },
+      { name: 'Reports & Data Exports', desc: 'Weekly sales summaries, stock reports, CSV/Excel exports — generated on a schedule and delivered to your inbox.' },
+      { name: 'Printable Order & Packing Slips', desc: 'For eCommerce: generate packing slips, shipping labels, and order sheets straight from the admin dashboard.' },
+      { name: 'Custom Document Workflows', desc: 'Booking confirmations, certificates, gift vouchers, contracts — if the data lives in your site, we can generate the document.' },
     ],
   },
   {
@@ -135,12 +135,12 @@ export default function ServicesPage() {
   return (
     <>
       <Helmet>
-        <title>Melbourne Web Design, Branding & Digital Marketing Services — Onrai Studio</title>
-        <meta name="description" content="Everything your Melbourne business needs online — web design, branding, graphic design, digital marketing, AI-powered search, hosting, maintenance, and custom admin dashboards. Melbourne-based, serving all of Australia." />
+        <title>Melbourne Web Design, Automation & AI Services — Onrai Studio</title>
+        <meta name="description" content="Everything your Melbourne business needs online — web design, brand theming, automated documents, transactional emails, PDF generation, digital marketing, AI-powered search, hosting, and custom admin dashboards. Melbourne-based, serving all of Australia." />
         <link rel="canonical" href="https://onraistudio.com/services" />
         <meta property="og:url" content="https://onraistudio.com/services" />
-        <meta property="og:title" content="Melbourne Web Design, Branding & Digital Marketing — Onrai Studio" />
-        <meta property="og:description" content="Everything your Melbourne business needs online — web design, branding, graphic design, and digital marketing. Melbourne-based studio, serving all of Australia." />
+        <meta property="og:title" content="Melbourne Web Design, Automation & AI — Onrai Studio" />
+        <meta property="og:description" content="Everything your Melbourne business needs online — web design, brand theming, automated emails and PDFs, digital marketing, and AI. Melbourne-based studio, serving all of Australia." />
       </Helmet>
 
       <main className="services-page">
@@ -159,11 +159,11 @@ export default function ServicesPage() {
               </div>
               <h1 className="sp__hero-heading">Everything your Melbourne business<br />needs to grow online.</h1>
               <p className="sp__hero-lead">
-                Web design, branding, graphic design, and digital marketing — all under one roof,
+                Web design, brand theming, automated documents, and digital marketing — all under one roof,
                 all built around your business goals.
               </p>
               <div className="sp__hero-pills">
-                {['Web Design', 'Logo Design', 'Brand Identity', 'Graphic Design', 'SEO', 'Google Ads', 'AI-Powered Search', 'Hosting & Maintenance', 'Admin Dashboards'].map(p => (
+                {['Web Design', 'Brand Theming', 'Transactional Emails', 'PDF Generation', 'SEO', 'Google Ads', 'AI-Powered Search', 'Hosting & Maintenance', 'Admin Dashboards'].map(p => (
                   <span key={p} className="sp__hero-pill">{p}</span>
                 ))}
               </div>
