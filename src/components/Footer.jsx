@@ -22,11 +22,11 @@ import LegalModal from "./LegalModal";
 import "./Footer.css";
 
 const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Packages", href: "#packages" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", to: "/services" },
+  { label: "Packages", to: "/packages" },
+  { label: "Portfolio", to: "/portfolio" },
+  { label: "About", to: "/about" },
+  { label: "Contact", to: "/contact" },
 ];
 
 export default function Footer() {
@@ -50,9 +50,9 @@ export default function Footer() {
             Book a Free Call →
           </button>
         ) : (
-          <a href="#contact" className="footer__cta-btn">
+          <Link to="/contact" className="footer__cta-btn">
             Get in Touch →
-          </a>
+          </Link>
         )}
       </div>
 
@@ -73,9 +73,9 @@ export default function Footer() {
           <ul className="footer__links">
             {navLinks.slice(0, 3).map((l) => (
               <li key={l.label}>
-                <a href={l.href} className="footer__link">
+                <Link to={l.to} className="footer__link">
                   {l.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -91,9 +91,9 @@ export default function Footer() {
           <ul className="footer__links">
             {navLinks.slice(3).map((l) => (
               <li key={l.label}>
-                <a href={l.href} className="footer__link">
+                <Link to={l.to} className="footer__link">
                   {l.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -141,7 +141,7 @@ export default function Footer() {
 
       <div className="footer__bottom">
         <span className="footer__copyright">
-          © 2025 Onrai Studio · ABN 00 000 000 000 · Built in Australia.
+          © 2025 Onrai Studio · ABN 77 808 784 890 · Built in Australia.
         </span>
         <div className="footer__legal">
           <button
