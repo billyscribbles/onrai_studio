@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Onrai Studio — Information Brochure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf9f7;
+    --bg-alt: #f3f1ee;
+    --card: #ffffff;
+    --text: #18181b;
+    --text-soft: #3f3f46;
+    --muted: #71717a;
+    --accent: #0c8c81;
+    --accent-dark: #0a7268;
+    --accent-light: #d0f5f0;
+    --border: rgba(24,24,27,0.09);
+    --dark: #111113;
+    --display: 'Fraunces', Georgia, serif;
+    --body: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    font-family: var(--body);
+    color: var(--text);
+    background: #e8e6e2;
+    font-size: 11pt;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* A4 page */
+  .page {
+    width: 210mm;
+    height: 297mm;
+    background: var(--bg);
+    margin: 14mm auto;
+    padding: 13mm 14mm 16mm;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    break-after: page;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+
+  @page { size: A4; margin: 0; }
+  @media print {
+    html, body { background: #fff; }
+    .page { margin: 0; box-shadow: none; height: 297mm; }
+  }
+
+  h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; letter-spacing: -0.01em; line-height: 1.15; }
+  p { color: var(--text-soft); }
+
+  /* ───── Cover ───── */
+  .cover {
+    background: var(--dark);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 22mm 18mm;
+  }
+  .cover__top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .cover__brand { display: flex; align-items: center; gap: 12px; font-family: var(--display); font-size: 14pt; font-weight: 500; }
+  .cover__brand-mark {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--accent);
+    display: grid; place-items: center;
+    color: #fff; font-family: var(--display); font-size: 18pt; font-weight: 600;
+  }
+  .cover__eyebrow {
+    font-size: 9pt; text-transform: uppercase; letter-spacing: 0.18em;
+    color: var(--accent); display: flex; align-items: center; gap: 8px;
+  }
+  .cover__eyebrow::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+  }
+  .cover__title {
+    font-family: var(--display); font-size: 44pt; font-weight: 500;
+    line-height: 1.02; margin-top: 28mm; max-width: 160mm;
+    color: #fff;
+  }
+  .cover__title em { font-style: italic; color: var(--accent); font-weight: 400; }
+  .cover__lead {
+    font-size: 12pt; color: rgba(255,255,255,0.65); max-width: 140mm;
+    margin-top: 8mm; line-height: 1.55;
+  }
+  .cover__bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 20mm; }
+  .cover__meta { font-size: 9pt; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.14em; }
+  .cover__meta strong { color: #fff; font-weight: 500; }
+  .cover__offer {
+    border: 1px solid rgba(12,140,129,0.5);
+    background: rgba(12,140,129,0.12);
+    border-radius: var(--radius-md);
+    padding: 14px 18px;
+    max-width: 90mm;
+  }
+  .cover__offer-label { font-size: 8pt; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); margin-bottom: 4px; }
+  .cover__offer-text { font-family: var(--display); font-size: 13pt; color: #fff; line-height: 1.25; }
+
+  /* ───── Section header ───── */
+  .section-eyebrow {
+    font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.18em;
+    color: var(--accent); margin-bottom: 6mm;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .section-eyebrow::before {
+    content: ''; width: 22px; height: 1px; background: var(--accent);
+  }
+  .section-title {
+    font-size: 24pt; font-weight: 500; max-width: 150mm;
+    margin-bottom: 3mm;
+  }
+  .section-lead { font-size: 10.5pt; max-width: 160mm; margin-bottom: 7mm; }
+
+  /* ───── About / Why us ───── */
+  .why-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5mm;
+    margin-top: 4mm;
+  }
+  .why-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 5mm 5mm 5mm;
+  }
+  .why-card__num {
+    font-family: var(--display); font-size: 16pt; color: var(--accent);
+    font-weight: 500; line-height: 1;
+  }
+  .why-card__title { font-size: 11pt; margin: 3mm 0 1.5mm; }
+  .why-card__desc { font-size: 9pt; color: var(--text-soft); }
+
+  /* Offer block */
+  .offer-block {
+    margin-top: 7mm;
+    background: linear-gradient(135deg, #0c8c81 0%, #0a7268 100%);
+    color: #fff;
+    border-radius: var(--radius-lg);
+    padding: 8mm 9mm;
+    position: relative;
+    overflow: hidden;
+    box-shadow: none;
+    border: 2px solid rgba(255,255,255,0.18);
+  }
+  .offer-block__label {
+    display: inline-block;
+    font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.18em;
+    background: transparent; color: #fff; font-weight: 700;
+    padding: 0; margin-bottom: 3.5mm;
+  }
+  .offer-block__title {
+    font-family: var(--display); font-size: 22pt; font-weight: 600;
+    line-height: 1.1; max-width: 150mm; color: #fff;
+  }
+  .offer-block__title strong {
+    font-weight: 600;
+    color: #fff;
+    border-bottom: 2px solid rgba(255,255,255,0.55);
+    padding-bottom: 1px;
+  }
+  .offer-block__desc { font-size: 10pt; color: #fff; opacity: 1; max-width: 150mm; margin-top: 3.5mm; line-height: 1.55; position: relative; }
+  .offer-block__pill {
+    display: inline-block; margin-top: 4mm; position: relative;
+    background: rgba(255,255,255,0.18); border: 1.5px solid rgba(255,255,255,0.6);
+    color: #fff; font-size: 10pt; font-weight: 500;
+    padding: 2.2mm 5.5mm; border-radius: 999px;
+  }
+  .offer-block__pill strong { font-weight: 700; border-bottom: 2px solid rgba(255,255,255,0.6); padding-bottom: 1px; }
+
+  /* ───── Package tiers ───── */
+  .tier {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--tier-color, var(--accent));
+    border-radius: var(--radius-md);
+    padding: 4.5mm 6mm 4.5mm;
+    margin-bottom: 3mm;
+  }
+  .tier--featured {
+    background: transparent;
+    box-shadow: none;
+    border: 1px solid rgba(12,140,129,0.25);
+    border-left: 4px solid var(--accent);
+  }
+  .tier__head {
+    display: flex; justify-content: space-between; align-items: flex-start; gap: 10mm;
+    margin-bottom: 2mm;
+  }
+  .tier__head-left { flex: 1; }
+  .tier__tagline {
+    font-size: 8pt; text-transform: uppercase; letter-spacing: 0.16em;
+    color: var(--tier-color, var(--accent)); margin-bottom: 2mm;
+  }
+  .tier__name { font-size: 19pt; font-weight: 500; }
+  .tier__pricing {
+    display: inline-block; margin-top: 2mm;
+    font-family: var(--body); font-size: 9pt; color: var(--muted);
+    background: var(--bg-alt); padding: 4px 10px; border-radius: var(--radius-full);
+  }
+  .tier__badge {
+    background: var(--accent); color: #fff;
+    font-size: 8pt; text-transform: uppercase; letter-spacing: 0.14em;
+    font-weight: 600; padding: 5px 10px; border-radius: var(--radius-full);
+  }
+  .tier__headline {
+    font-family: var(--display); font-size: 12pt; font-weight: 500;
+    color: var(--text); margin: 2mm 0 1.5mm; max-width: 160mm; line-height: 1.25;
+  }
+  .tier__lead { font-size: 9pt; max-width: 175mm; }
+  .tier__who {
+    font-size: 8.5pt; color: var(--muted); margin-top: 2mm;
+  }
+  .tier__who strong { color: var(--text); font-weight: 600; }
+
+  .tier__features {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2mm 6mm;
+    margin-top: 2.5mm;
+  }
+  .tier__feature {
+    display: flex; gap: 3mm; align-items: flex-start;
+  }
+  .tier__feature-tick {
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--tier-color, var(--accent));
+    color: #fff; flex-shrink: 0;
+    display: grid; place-items: center; font-size: 9pt; font-weight: 700;
+    margin-top: 1mm;
+  }
+  .tier__feature-text { font-size: 8.5pt; line-height: 1.4; }
+  .tier__feature-text strong { display: block; color: var(--text); font-weight: 600; margin-bottom: 1mm; }
+  .tier__feature-text span { color: var(--text-soft); }
+
+  .tier__outcome {
+    margin-top: 3mm; padding-top: 2.5mm;
+    border-top: 1px dashed var(--border);
+    font-size: 8.5pt; color: var(--text-soft); font-style: italic;
+  }
+
+  /* ───── Process / Footer ───── */
+  .process {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 5mm;
+    margin-top: 8mm;
+  }
+  .process__step {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 5mm 5mm 6mm;
+  }
+  .process__num {
+    font-family: var(--display); font-size: 22pt; color: var(--accent);
+    line-height: 1; font-weight: 500;
+  }
+  .process__title { font-size: 11pt; margin: 3mm 0 2mm; font-weight: 500; }
+  .process__desc { font-size: 9pt; color: var(--text-soft); }
+
+  .cta-final {
+    margin-top: 14mm;
+    background: var(--dark); color: #fff;
+    border-radius: var(--radius-lg);
+    padding: 10mm 12mm;
+    display: flex; justify-content: space-between; align-items: center; gap: 10mm;
+  }
+  .cta-final__left { max-width: 110mm; }
+  .cta-final__title { font-family: var(--display); font-size: 22pt; font-weight: 500; line-height: 1.15; }
+  .cta-final__sub { font-size: 10pt; color: rgba(255,255,255,0.65); margin-top: 3mm; }
+  .cta-final__contact {
+    text-align: right; font-size: 9pt; line-height: 1.7;
+  }
+  .cta-final__contact strong { display: block; font-family: var(--display); font-size: 13pt; color: var(--accent); font-weight: 500; margin-bottom: 1mm; }
+  .cta-final__contact a { color: rgba(255,255,255,0.85); }
+
+  .footer-meta {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 10mm; padding-top: 5mm;
+    border-top: 1px solid var(--border);
+    font-size: 8pt; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em;
+  }
+  .footer-meta strong { color: var(--text); font-weight: 600; }
+
+  /* ───── Case study ───── */
+  .case {
+    margin-top: 4mm;
+  }
+  .case__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 10mm; margin-bottom: 4mm; }
+  .case__client {
+    font-family: var(--display); font-size: 24pt; font-weight: 500; line-height: 1;
+  }
+  .case__client-meta { font-size: 9pt; color: var(--muted); margin-top: 2mm; text-transform: uppercase; letter-spacing: 0.14em; }
+  .case__tags { display: flex; gap: 2mm; flex-wrap: wrap; justify-content: flex-end; max-width: 80mm; }
+  .case__tag {
+    font-size: 8pt; color: var(--accent); background: var(--accent-light);
+    padding: 4px 10px; border-radius: var(--radius-full); font-weight: 500;
+  }
+  .case__brief {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--radius-md); padding: 4.5mm 6mm; margin-bottom: 4mm;
+  }
+  .case__brief-eyebrow { font-size: 8pt; text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent); margin-bottom: 1.5mm; }
+  .case__brief-title { font-family: var(--display); font-size: 13pt; font-weight: 500; margin-bottom: 2mm; line-height: 1.25; }
+  .case__brief-text { font-size: 9pt; color: var(--text-soft); }
+
+  .case__shots {
+    display: grid; grid-template-columns: 2fr 1fr; gap: 4mm;
+    margin-bottom: 4mm;
+  }
+  .case__shot {
+    border-radius: var(--radius-md); overflow: hidden;
+  }
+  .case__shot img { width: 100%; height: auto; display: block; border-radius: var(--radius-md); }
+  .case__shot--contain { display: flex; align-items: center; justify-content: center; }
+  .case__shot--contain img { width: 100%; height: auto; }
+  .case__shot--mobile { display: flex; align-items: center; justify-content: center; }
+  .case__shot--mobile img { max-height: 75mm; width: auto; border-radius: 8px; }
+
+  .case__results {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm;
+    margin-top: 2mm;
+  }
+  .case__result {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--radius-md); padding: 4mm 4.5mm;
+  }
+  .case__result-label { font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); margin-bottom: 1.5mm; }
+  .case__result-value { font-family: var(--display); font-size: 11pt; color: var(--text); font-weight: 500; line-height: 1.2; }
+
+  /* tier icon palette */
+  .tier--starter { --tier-color: #22c55e; }
+  .tier--growth { --tier-color: #0c8c81; }
+  .tier--ecommerce { --tier-color: #7c3aed; }
+  .tier--full-custom { --tier-color: #d97706; }
+</style>
+</head>
+<body>
+
+<!-- ════════ PAGE 1 — COVER ════════ -->
+<section class="page cover">
+  <div class="cover__top">
+    <div class="cover__brand">
+      <div class="cover__brand-mark">O</div>
+      Onrai Studio
+    </div>
+    <div class="cover__meta">Information Brochure · 2026</div>
+  </div>
+
+  <div>
+    <div class="cover__eyebrow">Melbourne · AI-Powered Web Studio</div>
+    <h1 class="cover__title">Websites built<br>by hand, <em>powered<br>by AI.</em></h1>
+    <p class="cover__lead">
+      We build fast, hand-coded websites for local and small businesses across Australia —
+      with custom dashboards, AI chatbots and SEO baked in from day one. No templates.
+      No drag-and-drop. Just clean code that makes your business look the way it deserves.
+    </p>
+  </div>
+
+  <div class="cover__bottom">
+    <div class="cover__meta">
+      <strong>onraistudio.com</strong><br>
+      onraistudio@gmail.com
+    </div>
+    <div class="cover__offer">
+      <div class="cover__offer-label">Limited Promotion</div>
+      <div class="cover__offer-text">Free setup on every new Starter plan.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════ PAGE 2 — WHY ONRAI + OFFER ════════ -->
+<section class="page">
+  <div class="section-eyebrow">Why Onrai Studio</div>
+  <h2 class="section-title">A web studio built<br>around small businesses.</h2>
+  <p class="section-lead">
+    Most agencies bolt your business onto a template. We do the opposite — every site is hand-coded
+    around how you actually work, so it loads faster, ranks higher, and feels like yours from the very
+    first click.
+  </p>
+
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-card__num">01</div>
+      <h3 class="why-card__title">Hand-written code, not site builders</h3>
+      <p class="why-card__desc">No Wix, no Squarespace, no WordPress themes. Every line is written by a developer — which means it's faster, leaner, and capable of things templates simply can't do.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-card__num">02</div>
+      <h3 class="why-card__title">Fast by default</h3>
+      <p class="why-card__desc">Sites load in under two seconds. We optimise images, minimise code and use modern hosting so visitors never wait — and Google rewards you for it.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-card__num">03</div>
+      <h3 class="why-card__title">AI baked in, not bolted on</h3>
+      <p class="why-card__desc">Smart chatbots, automated workflows and AI-assisted content come standard at the right tiers — so your site keeps working long after you've gone home.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-card__num">04</div>
+      <h3 class="why-card__title">Australian, plain-spoken support</h3>
+      <p class="why-card__desc">We're based in Melbourne and we talk like humans. No jargon, no lock-in contracts, no offshore ticket queues — just an honest conversation about what your business needs.</p>
+    </div>
+  </div>
+
+  <div class="offer-block">
+    <div class="offer-block__label">★ Limited Promotion</div>
+    <div class="offer-block__title">Start your business online — with <strong>free</strong> setup.</div>
+    <p class="offer-block__desc">
+      Every new Starter plan includes free setup. We design, build and launch your website at no upfront
+      cost — you only pay the small monthly subscription that keeps it hosted, updated and supported.
+      No catch, no contract lock-in. A complete professional online presence, ready to grow with you.
+    </p>
+    <div class="offer-block__pill">⚡ See a working demo within <strong>48 hours</strong></div>
+  </div>
+</section>
+
+
+<!-- ════════ PAGE 3 — PACKAGES (Starter + Growth) ════════ -->
+<section class="page">
+  <div class="section-eyebrow">Our Packages</div>
+  <h2 class="section-title">Four tiers. Zero templates.</h2>
+  <p class="section-lead">
+    Every package is scoped around your business — pick the one that fits where you are today,
+    and grow into the next when you're ready.
+  </p>
+
+  <article class="tier tier--starter">
+    <div class="tier__head">
+      <div class="tier__head-left">
+        <div class="tier__tagline">Get online fast</div>
+        <h3 class="tier__name">Starter</h3>
+        <span class="tier__pricing">Free setup + Monthly plan</span>
+      </div>
+    </div>
+    <h4 class="tier__headline">A professional website that just works.</h4>
+    <p class="tier__lead">
+      You don't have a website yet — or the one you have isn't doing its job. Starter gives you a clean,
+      modern site that loads fast, looks great on every device and shows up on Google from day one.
+    </p>
+    <p class="tier__who"><strong>Who it's for:</strong> Sole traders, new businesses, freelancers, or anyone who needs a quality web presence without the complexity.</p>
+    <div class="tier__features">
+      <div class="tier__feature"><div class="tier__feature-tick">✓</div><div class="tier__feature-text"><strong>Up to 5 custom pages</strong><span>Each page designed and built from scratch.</span></div></div>
+      <div class="tier__feature"><div class="tier__feature-tick">✓</div><div class="tier__feature-text"><strong>Loads in under 2 seconds</strong><span>Optimised images, lean code, modern hosting.</span></div></div>
+      <div class="tier__feature"><div class="tier__feature-tick">✓</div><div class="tier__feature-text"><strong>Google-indexed from day one</strong><span>Sitemap, meta tags and search submission included.</span></div></div>
+      <div class="tier__feature"><div class="tier__feature-tick">✓</div><div class="tier__feature-text"><strong>Reliable contact form</strong><span>Visitors fill it in, you get the email. No spam.</span></div></div>
+      <div class="tier__feature"><div class="tier__feature-tick">✓</div><div class="tier__feature-text"><strong>Basic on-page SEO</strong><span>Titles, descriptions, headings and alt text done right.</span></div></div>
+      <div class="tier__feature"><div class="tier__feature-tick">✓</div><div class="tier__feature-text"><strong>30 days of support</strong><span>Tweaks, text changes and questions covered after launch.</span></div></div>
+    </div>
+    <p class="tier__outcome">You walk away with a site that looks like you paid five figures for it — fast, polished, and ready to take enquiries.</p>
+  </article>
+
+  <article class="tier tier--growth tier--featured">
+    <div class="tier__head">
+      <div class="tier__head-left">
+        <div class="tier__tagline">Most popular</div>
+        <h3 class="tier__name">Growth</h3>
+        <span class="tier__pricing">One-time setup + Monthly plan</span>
+      </div>
+      <div class="tier__badge">★ Featured</div>
+    </div>
+    <h4 class="tier__headline">Your website becomes a business tool you actually control.</h4>
+    <p class="tier__lead">
+      Growth isn't just a better-looking website — it's a command centre for your online presence.
+      You get a custom admin dashboard, an AI chatbot that captures leads 24/7, and local SEO that
+      puts you on the map.
+    </p>
+    <p class="tier__who"><strong>Who it's for:</strong> Growing businesses that need to update their site regularly, capture leads, and show up in local search.</p>
+    <div class="tier__features">
+      <div class="tier__feature"><div class="tier__feature-tick">✓</div><div class="tier__feature-text"><strong>Custom admin dashboard</strong><span>Purpose-built, not WordPress. Clean and impossible to break.</span></div></div>
+      <div class="tier__feature"><div class="tier__feature-tick">✓</div><div class="tier__feature-text"><strong>Edit any text live</strong><span>Headlines, services, About — all editable in seconds.</span></div></div>
+      <div class="tier__feature"><div class="tier__feature-tick">✓</div><div class="tier__feature-text"><strong>Swap images instantly</strong><span>Drag, drop, done. Auto-optimised on upload.</span></div></div>
+      <div class="tier__feature"><div class="tier__feature-tick">✓</div><div class="tier__feature-text"><strong>AI lead-capturing chatbot</strong><span>Answers questions and qualifies leads while you sleep.</span></div></div>
+      <div class="tier__feature"><div class="tier__feature-tick">✓</div><div class="tier__feature-text"><strong>Local SEO + Google Business</strong><span>Show up on Google Maps and local search.</span></div></div>
+      <div class="tier__feature"><div class="tier__feature-tick">✓</div><div class="tier__feature-text"><strong>Analytics in your dashboard</strong><span>Visitors, pages and leads — no Google Analytics maze.</span></div></div>
+    </div>
+    <p class="tier__outcome">Your website stops being a static brochure and starts being something you actually use every day.</p>
+  </article>
+</section>
+
+
+<!-- ════════ PAGE 4 — PACKAGES (eCommerce + Full Custom) ════════ -->
+<section class="page">
+  <div class="section-eyebrow">Packages · Continued</div>
+  <h2 class="section-title">For shops, and for the ambitious.</h2>
+
+  <article class="tier tier--ecommerce">
+    <div class="tier__head">
+      <div class="tier__head-left">
+        <div class="tier__tagline">Sell online</div>
+        <h3 class="tier__name">eCommerce</h3>
+        <span class="tier__pricing">One-time setup + Monthly plan</span>
+      </div>
+    </div>
+    <h4 class="tier__headline">A storefront that looks custom but runs on the platform you already know.</h4>
+    <p class="tier__lead">
+      A fully custom-designed shopping experience connected to Shopify or WooCommerce behind the scenes.
+      You manage products the way you always have — your customers get a store nothing like a cookie-cutter theme.
+    </p>
+    <p class="tier__who"><strong>Who it's for:</strong> Product-based businesses and retailers who want a store that stands out from every Shopify theme.</p>
+    <div class="tier__features">
+      <div class="tier__feature"><div class="tier__feature-tick">✓</div><div class="tier__feature-text"><strong>Headless Shopify or WooCommerce</strong><span>Custom frontend, familiar backend.</span></div></div>
+      <div class="tier__feature"><div class="tier__feature-tick">✓</div><div class="tier__feature-text"><strong>Blazing-fast page loads</strong><span>Faster stores convert more customers — that's data, not opinion.</span></div></div>
+      <div class="tier__feature"><div class="tier__feature-tick">✓</div><div class="tier__feature-text"><strong>Fully custom design</strong><span>No template limits — every page built around your brand.</span></div></div>
+      <div class="tier__feature"><div class="tier__feature-tick">✓</div><div class="tier__feature-text"><strong>Up to 50 products</strong><span>Each with SEO-optimised pages, variants and pricing.</span></div></div>
+      <div class="tier__feature"><div class="tier__feature-tick">✓</div><div class="tier__feature-text"><strong>Secure Stripe payments</strong><span>Cards, Apple Pay, Google Pay — PCI-compliant.</span></div></div>
+      <div class="tier__feature"><div class="tier__feature-tick">✓</div><div class="tier__feature-text"><strong>Order management</strong><span>Track, fulfil and refund from your existing admin.</span></div></div>
+    </div>
+    <p class="tier__outcome">A premium, custom-built shopping experience — running on the dashboard you already know.</p>
+  </article>
+
+  <article class="tier tier--full-custom">
+    <div class="tier__head">
+      <div class="tier__head-left">
+        <div class="tier__tagline">Dream it. We build it.</div>
+        <h3 class="tier__name">Full Custom</h3>
+        <span class="tier__pricing">Custom quote</span>
+      </div>
+    </div>
+    <h4 class="tier__headline">No limits. No templates. Just code, craft, and your wildest ideas.</h4>
+    <p class="tier__lead">
+      This isn't a website package — it's a partnership. Every interaction, animation and function is
+      written by hand. If you've seen something on another site and thought "I want that", we can build it.
+      If you've dreamed up something that doesn't exist yet, we can prototype it, demo it, and ship it.
+    </p>
+    <p class="tier__who"><strong>Who it's for:</strong> Established businesses, startups with ambitious visions, or anyone who needs something off-the-shelf can't deliver.</p>
+    <div class="tier__features">
+      <div class="tier__feature"><div class="tier__feature-tick">✓</div><div class="tier__feature-text"><strong>Hand-written code throughout</strong><span>Custom interactions, complex logic, bespoke functionality.</span></div></div>
+      <div class="tier__feature"><div class="tier__feature-tick">✓</div><div class="tier__feature-text"><strong>Prototype anything</strong><span>See a working demo before committing.</span></div></div>
+      <div class="tier__feature"><div class="tier__feature-tick">✓</div><div class="tier__feature-text"><strong>Custom design & animation</strong><span>Scroll, parallax, 3D, micro-interactions — all on every device.</span></div></div>
+      <div class="tier__feature"><div class="tier__feature-tick">✓</div><div class="tier__feature-text"><strong>Ongoing AI automation</strong><span>Smart support, content, analytics and workflow systems.</span></div></div>
+      <div class="tier__feature"><div class="tier__feature-tick">✓</div><div class="tier__feature-text"><strong>Monthly SEO reporting</strong><span>Clear ranking, traffic and recommendation reports.</span></div></div>
+      <div class="tier__feature"><div class="tier__feature-tick">✓</div><div class="tier__feature-text"><strong>Priority dedicated support</strong><span>A direct contact who knows your project inside-out.</span></div></div>
+    </div>
+    <p class="tier__outcome">You don't get a website — you get exactly what your business needs, built from the ground up.</p>
+  </article>
+</section>
+
+
+<!-- ════════ PAGE 5 — CASE STUDY ════════ -->
+<section class="page">
+  <div class="section-eyebrow">Featured Work</div>
+  <h2 class="section-title">A site we shipped recently.</h2>
+  <p class="section-lead">
+    A look at one of our clients — and exactly the kind of work we do for businesses across Australia.
+  </p>
+
+  <div class="case">
+    <div class="case__head">
+      <div>
+        <div class="case__client">Elusive Racing</div>
+        <div class="case__client-meta">Melbourne · Honda performance specialists</div>
+      </div>
+      <div class="case__tags">
+        <span class="case__tag">eCommerce</span>
+        <span class="case__tag">Wholesale Portal</span>
+        <span class="case__tag">Workshop Bookings</span>
+      </div>
+    </div>
+
+    <div class="case__brief">
+      <div class="case__brief-eyebrow">The Brief</div>
+      <h3 class="case__brief-title">Ten years of expertise, one unified storefront.</h3>
+      <p class="case__brief-text">
+        Elusive Racing came to us with a decade of hard-won knowledge but a digital presence that didn't reflect it.
+        We built an end-to-end experience: a fully custom eCommerce store, a wholesale portal for trade clients,
+        and a workshop booking system — all under one fast, beautifully designed roof.
+      </p>
+    </div>
+
+    <div class="case__shots">
+      <div class="case__shot case__shot--contain">
+        <img src="../public/images/portfolio/elusive-racing/home-hero.png" alt="Elusive Racing hero" />
+      </div>
+      <div class="case__shot case__shot--mobile">
+        <img src="../public/images/portfolio/elusive-racing/mobile-home.png" alt="Elusive Racing mobile" />
+      </div>
+    </div>
+
+    <div class="case__shots" style="grid-template-columns: 1fr 1fr;">
+      <div class="case__shot">
+        <img src="../public/images/portfolio/elusive-racing/home-products.png" alt="Elusive Racing products" />
+      </div>
+      <div class="case__shot">
+        <img src="../public/images/portfolio/elusive-racing/shop-grid.png" alt="Elusive Racing shop grid" />
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════ PAGE 6 — PROCESS + CONTACT ════════ -->
+<section class="page">
+  <div class="section-eyebrow">How We Work</div>
+  <h2 class="section-title">From first call to launch — in four steps.</h2>
+  <p class="section-lead">
+    A simple, transparent process. You'll always know where the project's at, what's coming next, and
+    what we need from you to keep things moving.
+  </p>
+
+  <div class="process">
+    <div class="process__step">
+      <div class="process__num">01</div>
+      <div class="process__title">Free consultation</div>
+      <p class="process__desc">A no-obligation call to understand your business, goals and budget. We recommend the right package — or build something in between.</p>
+    </div>
+    <div class="process__step">
+      <div class="process__num">02</div>
+      <div class="process__title">Design &amp; prototype</div>
+      <p class="process__desc">We sketch, design and prototype the experience. You see and approve every screen before a line of production code is written.</p>
+    </div>
+    <div class="process__step">
+      <div class="process__num">03</div>
+      <div class="process__title">Hand-coded build</div>
+      <p class="process__desc">Your site is built from scratch — clean, fast, accessible, and SEO-ready. Weekly progress updates so nothing's a surprise.</p>
+    </div>
+    <div class="process__step">
+      <div class="process__num">04</div>
+      <div class="process__title">Launch &amp; support</div>
+      <p class="process__desc">We ship to production, hand over the keys, and stay close — covering tweaks, training and ongoing improvements.</p>
+    </div>
+  </div>
+
+  <div class="cta-final">
+    <div class="cta-final__left">
+      <div class="cta-final__title">Ready to start your free Starter plan?</div>
+      <div class="cta-final__sub">Tell us about your business — we reply within one business day, no obligations and no jargon.</div>
+    </div>
+    <div class="cta-final__contact">
+      <strong>onraistudio.com</strong>
+      <a href="mailto:onraistudio@gmail.com">onraistudio@gmail.com</a><br>
+      Melbourne · Australia
+    </div>
+  </div>
+
+  <div class="footer-meta">
+    <span><strong>Onrai Studio</strong> · Melbourne, Australia</span>
+    <span>Information Brochure · 2026</span>
+  </div>
+</section>
+
+</body>
+</html>
