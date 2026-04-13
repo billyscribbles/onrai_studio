@@ -23,7 +23,7 @@
 
 .techstack__runway-wrap::before,
 .techstack__runway-wrap::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -57,8 +57,12 @@
 }
 
 @keyframes runway {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 /* Individual logo item */
@@ -81,7 +85,9 @@
   height: 36px;
   object-fit: contain;
   opacity: 0.7;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
   user-select: none;
 }
 

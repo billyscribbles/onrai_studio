@@ -62,7 +62,7 @@
 
 .industries__runway-wrap::before,
 .industries__runway-wrap::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -73,12 +73,20 @@
 
 .industries__runway-wrap::before {
   left: 0;
-  background: linear-gradient(to right, var(--color-bg-alt) 0%, transparent 100%);
+  background: linear-gradient(
+    to right,
+    var(--color-bg-alt) 0%,
+    transparent 100%
+  );
 }
 
 .industries__runway-wrap::after {
   right: 0;
-  background: linear-gradient(to left, var(--color-bg-alt) 0%, transparent 100%);
+  background: linear-gradient(
+    to left,
+    var(--color-bg-alt) 0%,
+    transparent 100%
+  );
 }
 
 /* Scrolling track */
@@ -96,13 +104,21 @@
 }
 
 @keyframes industries-scroll-left {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes industries-scroll-right {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0); }
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 /* Chips */
@@ -116,7 +132,9 @@
   border-radius: var(--radius-full);
   cursor: default;
   flex-shrink: 0;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .industry-chip:hover {
@@ -168,7 +186,9 @@
   font-weight: 600;
   border-radius: var(--radius-full);
   text-decoration: none;
-  transition: background var(--transition-fast), transform var(--transition-fast);
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .industries__cta-btn:hover {

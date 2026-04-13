@@ -44,15 +44,15 @@ export default function Home() {
       <main>
       <Hero />
       <Suspense fallback={null}>
+        <Portfolio />
         <Stats />
         <Services />
-        <Industries />
-        <AIFeatures />
         <HowItWorks />
         <Shop />
-        <Portfolio />
-        <TechStack />
         <Testimonials />
+        <AIFeatures />
+        <Industries />
+        <TechStack />
         <FAQ />
         <Contact />
       </Suspense>
