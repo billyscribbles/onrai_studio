@@ -34,10 +34,17 @@
 }
 
 html {
-  /* clip (not hidden) — blocks horizontal scroll from off-screen Framer Motion
-     initial transforms (x: 40, etc.) without creating a scroll container,
-     so position: sticky on the navbar still works. */
+  /* clip (not hidden) — modern browsers (Safari 16+). Blocks horizontal scroll
+     from off-screen Framer Motion initial transforms without creating a scroll
+     container, so position: sticky on the navbar still works. */
   overflow-x: clip;
+}
+
+/* Universal fallback for older browsers without overflow-x: clip support.
+   Every section clips its own horizontal overflow. The navbar is the only
+   sticky element in the app and lives outside any <section>, so this is safe. */
+section {
+  overflow-x: hidden;
 }
 
 @media (prefers-reduced-motion: no-preference) {
