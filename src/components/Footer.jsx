@@ -146,6 +146,9 @@ export default function Footer() {
           <Link to="/terms" className="footer__legal-btn">
             Terms
           </Link>
+          <Link to="/agreement" className="footer__legal-btn">
+            Service Agreement
+          </Link>
         </div>
       </div>
     </footer>

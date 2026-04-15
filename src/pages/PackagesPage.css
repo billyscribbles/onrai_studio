@@ -698,6 +698,25 @@
   box-shadow: 0 8px 28px rgba(12, 140, 129, 0.3);
 }
 
+.pkg__compare-fineprint {
+  margin-top: 1.5rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.pkg__compare-fineprint a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.pkg__compare-fineprint a:hover {
+  color: var(--color-accent-dark);
+  text-decoration: underline;
+}
+
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .pkg__hero-inner {

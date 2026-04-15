@@ -82,6 +82,7 @@ export default function App() {
           <Route path="/the-climb/:slug" element={<TheClimbStepPage />} />
           <Route path="/privacy" element={<LegalPage type="privacy" />} />
           <Route path="/terms" element={<LegalPage type="terms" />} />
+          <Route path="/agreement" element={<LegalPage type="agreement" />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>

@@ -520,6 +520,9 @@ export default function PackagesPage() {
               <Link to="/contact" className="pkg__compare-cta">
                 Talk to us <ArrowRight size={16} />
               </Link>
+              <p className="pkg__compare-fineprint">
+                Ready to get serious? <Link to="/agreement">Read the full service agreement →</Link>
+              </p>
             </motion.div>
           </div>
         </section>

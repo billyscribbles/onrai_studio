@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
-import { PRIVACY, TERMS } from '../data/legal'
+import { PRIVACY, TERMS, AGREEMENT } from '../data/legal'
 import './LegalPage.css'
 
 const META = {
@@ -16,6 +16,12 @@ const META = {
     path: '/terms',
     eyebrow: 'Legal · Terms',
   },
+  agreement: {
+    title: 'Service Agreement — Onrai Studio',
+    description: 'The plain-English service agreement for working with Onrai Studio. Scope, subscription terms, ownership, cancellation, and what we do (and don\'t) include — all before you sign on.',
+    path: '/agreement',
+    eyebrow: 'Legal · Service Agreement',
+  },
 }
 
 function renderParagraph(para, i) {
@@ -26,7 +32,7 @@ function renderParagraph(para, i) {
 }
 
 export default function LegalPage({ type }) {
-  const doc = type === 'privacy' ? PRIVACY : TERMS
+  const doc = type === 'privacy' ? PRIVACY : type === 'agreement' ? AGREEMENT : TERMS
   const meta = META[type]
 
   return (
