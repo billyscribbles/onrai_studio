@@ -44,10 +44,10 @@ export const chapters = [
       'Google trusts what other sites say about you more than what you say about yourself. This chapter is about earning those votes.',
   },
   {
-    id: 'coverage',
-    title: 'Result Coverage',
+    id: 'reward',
+    title: 'The Reward',
     subtitle:
-      `Once Google trusts you, your search result stops being one blue link and starts taking over the page — nested sitelinks, more clicks, more screen real estate. This chapter is about earning that upgrade.`,
+      `This is what every earlier step has been building toward. When Google decides you've earned it, your search result stops being one blue link and turns into a small menu of your whole business — nested sitelinks, more clicks, more of the page. You don't buy this upgrade. You earn it.`,
   },
 ]
 
@@ -1257,56 +1257,56 @@ export const entries = [
     id: 12,
     step: 12,
     slug: '12-earn-google-sitelinks',
-    chapter: 'coverage',
+    chapter: 'reward',
     overallDifficulty: 'medium',
-    title: 'Earn Sitelinks Under Your Google Result',
-    summary: `Search a big brand and you don't get one link — you get a stack of them: Home, Services, Contact, Reviews. That stack is called sitelinks, and you can't buy them. You earn them.`,
+    title: 'The Reward — Sitelinks Under Your Google Result',
+    summary: `This is what every earlier step has been building toward. Search a big brand and you don't get one link — you get a stack of them: Home, Services, Contact, Reviews. That stack is called sitelinks. It's the reward Google hands out when it decides you've earned it.`,
     sections: [
       {
         type: 'text',
-        heading: 'Why this matters',
-        body: `A normal Google result is one blue link, one URL, two lines of text. A result with sitelinks is a small menu of your whole site — six clickable links, sometimes with their own descriptions. It takes up two or three times more space, pushes competitors below the fold, and quietly tells anyone watching that Google trusts you. Same ranking, completely different result.`,
+        heading: 'Why this is the reward',
+        body: `A normal Google result is one blue link, one URL, two lines of text. The reward version is a small menu of your whole business — six clickable links, sometimes with their own descriptions. It takes up two or three times more space, pushes competitors below the fold, and quietly signals that Google trusts you. Same ranking, completely different result. You can't pay for it. Google gives it to the sites it has decided are the real thing.`,
       },
       {
         type: 'text',
-        heading: `You can't add them — only earn them`,
-        body: `There's no setting in Google. No piece of code you paste in. No schema markup that turns sitelinks on. Google decides automatically, and it only decides yes when it's confident about two things: who you are, and how your site is laid out. Everything below is about giving Google enough signals that the answer becomes obvious.`,
+        heading: `You don't switch it on — you earn it`,
+        body: `There's no setting in Google. No code you paste in. No schema markup that turns sitelinks on. Google decides on its own, and it only decides yes when everything you've done in the earlier chapters adds up: a recognised brand, a trusted profile, a clean site it can read. The checklist below is really a summary of the homework Google wants to see finished before it gives you the reward.`,
       },
       {
         type: 'steps',
-        heading: 'What makes Google show sitelinks',
+        heading: 'What Google wants to see before it rewards you',
         items: [
           {
-            title: 'Win your own brand search first',
-            description: `Sitelinks almost only appear when someone searches your brand name and you're the #1 result. If Google still isn't sure your brand is yours, go back to Step 02 and finish that fight first. No brand authority, no sitelinks.`,
+            title: 'Own your brand search',
+            description: `Google only hands the reward to sites that are already the unquestioned #1 result for their own name. If Google still isn't sure your brand is yours, go back to Step 02 and finish that fight first. No brand authority, no reward.`,
             difficulty: 'medium',
             audience: 'anyone',
             time: '~30 min',
           },
           {
             title: 'Keep your main navigation small and stable',
-            description: `Google looks at your top nav as the strongest hint about your most important pages. Aim for 5–7 items: Home, Services, Portfolio, About, Contact. Don't change them every month. The more stable and obvious your nav, the more confident Google is about which links to surface.`,
+            description: `Your top nav is the strongest hint Google has about which pages deserve the reward. Aim for 5–7 items: Home, Services, Portfolio, About, Contact. Don't reshuffle them every month. The more stable and obvious your nav, the more confident Google is about which links to pick when it's ready to give you sitelinks.`,
             difficulty: 'easy',
             audience: 'anyone',
             time: '~15 min',
           },
           {
             title: 'Use descriptive link text everywhere',
-            description: `"Click here" tells Google nothing. "Rolex servicing in Melbourne" tells Google exactly what that page is about. Every internal link on your site should describe its destination in plain words. Those descriptions are the candidate text for your future sitelinks.`,
+            description: `"Click here" tells Google nothing. "Rolex servicing in Melbourne" tells Google exactly what that page is about. Every internal link should describe its destination in plain words — because those descriptions are the candidate wording Google will use when it eventually builds your sitelinks. Vague link text = no good options for the reward.`,
             difficulty: 'easy',
             audience: 'anyone',
             time: '~30 min',
           },
           {
             title: 'Use logical, readable URLs',
-            description: `/services/web-design beats /page?id=42. URLs that read like a sentence help Google group your pages into a structure it can show off. If your URLs are messy, fix them once now and set up redirects from the old ones — your hosting provider has a guide for this.`,
+            description: `/services/web-design beats /page?id=42. URLs that read like a sentence help Google group your pages into a structure it's proud to put on display. Messy URLs are a reason for Google to quietly keep the reward to itself. Fix them once now and set up redirects from the old ones — your hosting provider has a guide for this.`,
             difficulty: 'medium',
             audience: 'developer',
             time: '~45 min',
           },
           {
             title: 'Submit your sitemap and keep page titles unique',
-            description: `In Google Search Console, submit your sitemap.xml so Google has the full map of your site. Then make sure every page has its own unique <title> tag — no two pages with the same title. Duplicate titles confuse Google and kill sitelink chances.`,
+            description: `In Google Search Console, submit your sitemap.xml so Google has the full map of your site. Then make sure every page has its own unique <title> tag — no two pages sharing one. Duplicate titles confuse Google, and a confused Google never hands out the reward.`,
             difficulty: 'medium',
             audience: 'developer',
             time: '~30 min',
@@ -1315,20 +1315,20 @@ export const entries = [
       },
       {
         type: 'text',
-        heading: 'If Google picks the wrong sitelinks',
-        body: `Sometimes Google chooses something weird — an old privacy policy, a stray tag page. You can't add sitelinks, but you can demote ones you don't like. Open Search Console, find the URL you don't want, and tell Google to deprioritise it. Within a week or two it usually disappears and a better page takes its place.`,
+        heading: 'If Google rewards you with the wrong links',
+        body: `Sometimes Google finally hands over the reward but picks something weird — an old privacy policy, a stray tag page. You can't add sitelinks, but you can demote the ones you don't like. Open Search Console, find the URL you don't want, and tell Google to deprioritise it. Within a week or two it usually disappears and a better page takes its place.`,
       },
       {
         type: 'text',
-        heading: 'What changes after this',
-        body: `Your brand result stops looking like everyone else's and starts looking like a small menu of your business. Click-through rate climbs because there are more entry points. Competitors below you get visually buried. The result feels official — and feeling official is half the battle in winning a stranger's first click.`,
+        heading: 'What the reward looks like',
+        body: `Your brand result stops looking like everyone else's and starts looking like a small menu of your business. Click-through rate climbs because there are more entry points. Competitors below you get visually buried. The result feels official — and feeling official is half the battle in winning a stranger's first click. This is the payoff for every earlier step on The Climb.`,
       },
       {
         type: 'next',
         heading: 'Next on the climb',
         items: [
-          `Reading the theory is one thing. In Step 13 we walk through how we actually applied this checklist to onraistudio.com — what we audited, what was already in good shape, and the one thing we found broken.`,
-          `If you have your own site, you can copy the same audit straight off Step 13 and run it yourself in an afternoon.`,
+          `Reading the theory is one thing. In Step 13 we walk through the actual homework we did on onraistudio.com to qualify for the reward — what we audited, what was already in good shape, and the one thing we found broken.`,
+          `If you have your own site, you can copy the same audit straight off Step 13 and start earning your own reward in an afternoon.`,
         ],
       },
     ],
@@ -1337,28 +1337,28 @@ export const entries = [
     id: 13,
     step: 13,
     slug: '13-applying-sitelinks-to-our-site',
-    chapter: 'coverage',
+    chapter: 'reward',
     overallDifficulty: 'easy',
-    title: `How We're Earning Our Own Sitelinks`,
-    summary: `Step 12 explained what makes Google show sitelinks. This step is the worked example — the actual changes we made to onraistudio.com so Google starts giving us the same treatment. If you have your own site, you can copy this checklist directly.`,
+    title: `How We're Earning Our Reward`,
+    summary: `Step 12 explained what the reward is and what Google wants to see before it hands it over. This step is the worked example — the actual homework we did on onraistudio.com so Google has no reason left to hold the reward back. If you have your own site, you can copy this checklist directly.`,
     sections: [
       {
         type: 'text',
         heading: 'Why this matters',
-        body: `It's one thing to read the theory of how sitelinks work. It's another to see it done on a real site. So we audited Onrai Studio against the five things Google looks for in Step 12, fixed what was missing, and wrote it up. Most of what Google needs is small, technical, and boring — but skipping any one of them is enough to keep your search result stuck as a single blue link forever.`,
+        body: `It's one thing to read the theory. It's another to see it applied to a real site. So we audited Onrai Studio against the five things Google wants to see before it rewards you with sitelinks, fixed what was missing, and wrote it up. The work is small, technical, and mostly boring — but skipping any one of these is enough to keep your search result stuck as a single blue link forever.`,
       },
       {
         type: 'text',
         heading: 'How we audited the site',
-        body: `We took each of the five Step 12 signals — brand search, nav structure, link text, URL shape, and sitemap/titles — and walked through the whole site asking "is this true for us, and if not, what's the smallest fix?" Four of the five were already in good shape from earlier steps. One had a real gap. Here's what we found, in order.`,
+        body: `We took each of the five Step 12 signals — brand search, nav structure, link text, URL shape, and sitemap/titles — and walked through the whole site asking "is this true for us, and if not, what's the smallest fix?" Four of the five were already in good shape from earlier chapters of The Climb. One had a real gap. Here's what we found, in order.`,
       },
       {
         type: 'steps',
         heading: 'What we checked, and what we changed',
         items: [
           {
-            title: `Signal 1 — Are we winning our own brand search?`,
-            description: `This is Step 02's job, and it's already in motion. "Onrai" is a unique enough name that there's nothing for Google to confuse us with. No change needed here, but it's the foundation everything else builds on. If we hadn't done Step 02 first, none of the other signals would matter.`,
+            title: `Signal 1 — Do we own our own brand search?`,
+            description: `This is Step 02's job, and it's already in motion. "Onrai" is unique enough that Google has nothing to confuse us with. No change needed — but this is the gate everything else sits behind. If we hadn't done Step 02 first, Google would never even consider handing over the reward.`,
             difficulty: 'easy',
             audience: 'anyone',
             time: 'already done',
@@ -1386,7 +1386,7 @@ export const entries = [
           },
           {
             title: `Signal 5 — Is the sitemap up to date and are titles unique?`,
-            description: `Here's where we found the gap. We'd just added Steps 12 and 13 to The Climb, but public/sitemap.xml hadn't been updated — meaning Google had no way to discover them. We added both new URLs with today's lastmod and resubmitted the sitemap in Search Console. We also walked every <title> tag in the pages folder and confirmed they're all unique and descriptive (e.g. "Packages — What You Get at Every Tier | Onrai Studio").`,
+            description: `Here's where we found the gap — and this is exactly the kind of thing that quietly stops Google from handing over the reward. We'd just added Steps 12 and 13 to The Climb, but public/sitemap.xml hadn't been updated, so Google had no way to discover them. We added both new URLs with today's lastmod and resubmitted the sitemap in Search Console. We also walked every <title> tag in the pages folder and confirmed they're all unique and descriptive (e.g. "Packages — What You Get at Every Tier | Onrai Studio").`,
             difficulty: 'medium',
             audience: 'developer',
             time: '~10 min',
@@ -1396,7 +1396,7 @@ export const entries = [
       {
         type: 'list',
         heading: 'The same checklist for your site',
-        intro: `If you want to do this on your own site, here's the audit in order. Most small business sites pass the first four and fail the fifth — the sitemap is almost always stale.`,
+        intro: `If you want to earn the same reward on your own site, here's the audit in order. Most small business sites pass the first four and fail the fifth — the sitemap is almost always stale, and that alone is enough to hold the reward back.`,
         items: [
           `Search your brand name on Google. Are you the #1 result for it? If not, finish Step 02 first.`,
           `Open your site and count your top-nav items. Five to seven is the sweet spot. More than that, trim it.`,
@@ -1406,12 +1406,12 @@ export const entries = [
           `Open your sitemap.xml in a browser. Does it list every page that should be public? Are the dates recent? If not, regenerate it and resubmit it in Search Console.`,
           `Open every public page and check the <title> tag. Each one should be unique, descriptive, and end with your brand name.`,
         ],
-        outro: `Each item is small. The compounding effect is what gets Google to start showing you sitelinks within a few weeks of your next big crawl.`,
+        outro: `Each item is small. The compounding effect is what gets Google to hand over the reward within a few weeks of its next big crawl.`,
       },
       {
         type: 'text',
-        heading: 'What changes after this',
-        body: `On its own, this audit doesn't immediately upgrade our search result — Google still has to recrawl, re-evaluate, and decide. But it removes every excuse Google had for keeping us at one blue link. Over the next few weeks, every signal we cleaned up makes the sitelinks upgrade more likely. The point isn't to game anything; it's to stop accidentally hiding a clean, well-structured site behind a sloppy sitemap.`,
+        heading: 'Claiming the reward',
+        body: `On its own, this audit doesn't instantly upgrade our search result — Google still has to recrawl, re-evaluate, and decide. But it removes every excuse Google had for withholding the reward. Over the next few weeks, every signal we cleaned up makes the sitelinks upgrade more likely. The point isn't to game anything; it's to stop accidentally hiding a clean, well-structured site behind a sloppy sitemap, so Google can finally give you what you've already earned.`,
       },
       {
         type: 'next',
