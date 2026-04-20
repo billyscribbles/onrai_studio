@@ -1332,9 +1332,9 @@ export const entries = [
       {
         type: 'baseline',
         heading: 'The reward, in the wild',
-        body: `Here is what it looks like when Google decides you've earned it. Search "Onrai Studio" today and you'll see our homepage with sub-links underneath — Melbourne Web Design Portfolio, The Climb — laid out like a mini table of contents. That's Google saying: "I trust this site. Here's a menu of the pages most worth your click."`,
+        body: `Here is what it looks like when Google decides you've earned it. Search "Onrai Studio" today and you'll see our homepage with a stack of sub-links underneath — Melbourne Web Design Portfolio, The Climb, Getting Google to Recognise, even our Privacy Policy — laid out like a mini table of contents. That's Google saying: "I trust this site. Here's a menu of the pages most worth your click." (And yes, that Privacy Policy link is exactly the kind of weird pick the previous section warned about — a perfect demotion candidate.)`,
         image: '/images/google-onrai-studio-sitelinks.png',
-        alt: 'Google search results for "Onrai Studio" showing the onraistudio.com listing with nested sitelinks below it: Melbourne Web Design Portfolio and The Climb.',
+        alt: 'Google search results for "Onrai Studio" showing the onraistudio.com listing with four nested sitelinks below it: Melbourne Web Design Portfolio, The Climb, Getting Google to Recognise, and Privacy Policy.',
         caption: `Google search for "Onrai Studio" — the reward arrives`,
       },
       {
