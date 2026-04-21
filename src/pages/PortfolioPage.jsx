@@ -140,7 +140,6 @@ const projects = [
   { id: 103, tag: 'Healthcare', isComingSoon: true },
   { id: 104, tag: 'Hospitality', isComingSoon: true },
   { id: 105, tag: 'Consulting', isComingSoon: true },
-  { id: 106, tag: 'Manufacturing', isComingSoon: true },
 ]
 
 const categories = ['All', 'eCommerce', 'SaaS', 'Trade', 'Healthcare', 'Hospitality', 'Consulting', 'Manufacturing']
