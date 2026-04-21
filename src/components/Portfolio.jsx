@@ -33,9 +33,7 @@ const projects = [
   },
   {
     tag: 'Hospitality',
-    name: 'Marlowe & Vine',
-    description: 'Showcase site for a restaurant group with reservations and event enquiries.',
-    to: '/portfolio',
+    isComingSoon: true,
   },
 ]
 
@@ -55,7 +53,30 @@ export default function Portfolio() {
         </motion.div>
 
         <div className="portfolio__grid">
-          {projects.map((p, i) => (
+          {projects.map((p, i) => {
+            if (p.isComingSoon) {
+              return (
+                <motion.div
+                  key={`coming-soon-${p.tag}`}
+                  className="portfolio-card portfolio-card--coming-soon"
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <span className="portfolio-card__tag">{p.tag}</span>
+                  <div className="portfolio-card__coming-soon-body">
+                    <span className="portfolio-card__coming-soon-icon" aria-hidden="true">✦</span>
+                    <h3 className="portfolio-card__coming-soon-title">Coming soon</h3>
+                    <p className="portfolio-card__coming-soon-desc">
+                      Be our first {p.tag} project.
+                    </p>
+                  </div>
+                </motion.div>
+              )
+            }
+
+            return (
             <motion.div
               key={p.name}
               className={`portfolio-card${p.featured ? ' portfolio-card--featured' : ''}${p.stacked ? ' portfolio-card--stacked' : ''}`}
@@ -102,7 +123,8 @@ export default function Portfolio() {
                 </div>
               </Link>
             </motion.div>
-          ))}
+            )
+          })}
         </div>
 
         <div className="portfolio__cta-wrap">
