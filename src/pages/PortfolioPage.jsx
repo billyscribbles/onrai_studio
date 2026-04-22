@@ -296,7 +296,7 @@ export default function PortfolioPage() {
               </p>
               <div className="portfolio-page__featured-stats">
                 <div><strong>Handmade</strong><span>1-of-1 SKUs</span></div>
-                <div><strong>Worldwide</strong><span>Shipping</span></div>
+                <div><strong>Australia-Wide</strong><span>Shipping</span></div>
                 <div><strong>Custom</strong><span>Orders Flow</span></div>
               </div>
               <div className="portfolio-page__featured-pills">

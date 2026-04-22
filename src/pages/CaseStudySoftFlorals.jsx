@@ -10,7 +10,7 @@ const EASE = [0.22, 1, 0.36, 1]
 const stats = [
   { value: '1-of-1', label: 'Hand-Twisted SKUs' },
   { value: '8+', label: 'Collection Pieces' },
-  { value: 'Ships', label: 'Worldwide' },
+  { value: 'Ships', label: 'Australia-Wide' },
   { value: 'Custom', label: 'Orders Flow' },
 ]
 
@@ -120,7 +120,7 @@ export default function CaseStudySoftFlorals() {
             <p className="case-softflorals__lead">
               A calm, editorial storefront for Melbourne's handmade forever-flower studio.
               Collection, brand story, care guide, and a custom-orders flow — all hand-written in
-              production code, tuned for the phone, and ready to ship worldwide.
+              production code, tuned for the phone, and ready to ship Australia-wide.
             </p>
             <div className="case-softflorals__hero-ctas">
               <a
